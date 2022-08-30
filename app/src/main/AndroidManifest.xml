@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.puj.talktome">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalkToMe"
         tools:targetApi="31">
+        <activity
+            android:name=".PerfilProfesional2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeProfesionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeTalkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SProfesionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".STalkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoleActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
