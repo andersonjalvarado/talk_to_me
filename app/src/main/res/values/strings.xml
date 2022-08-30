@@ -35,4 +35,18 @@
     <string name="Disponible">Disponible</string>
     <string name="NoDisponible">No Disponible</string>
     <string name="Cita">Solicitar una Cita</string>
+    <string name="titulo_diagnostico">Diagnóstico</string>
+    <string name="informacion_diagnostico">Aquí puedes ver tus diagnósticos</string>
+    <string name="titulo_citas">Citas</string>
+    <string name="informacion_citas">Aquí puedes ver tus citas</string>
+    <string name="informacion_detalle_citas">Aquí puedes ver tu cita con más detalles</string>
+    <string name="titulo_profesionales">Profesionales</string>
+    <string name="informacion_profesionales">Aquí puedes ver los profesionales disponibles</string>
+    <string name="mostar_ubicación">Mostrar ubicación en el mapa</string>
+    <string name="bienvenida">Bienvenido a Talk To Me</string>
+    <string name="mensaje">Cuida tu salud desde cualquier lugar</string>
+    <string name="mi_historial">Mi historial</string>
+    <string name="mis_diagnoticos">Mis diagnósticos</string>
+    <string name="mis_citas">Mis citas</string>
+    <string name="ubicaciones">Ubicaciones</string>
 </resources>

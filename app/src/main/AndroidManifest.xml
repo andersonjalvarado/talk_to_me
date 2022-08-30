@@ -16,6 +16,22 @@
         android:theme="@style/Theme.TalkToMe"
         tools:targetApi="31">
         <activity
+            android:name=".LocationsTalkerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DiagnosesTalkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AvailableProfessionalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppointmentsDetailsTalkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppointmentsTalkerActivity"
+            android:exported="false" />
+        <activity
             android:name=".PerfilProfesional2Activity"
             android:exported="false" />
         <activity
@@ -48,6 +64,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA6SBWvwZsDv6s-hzesv0pKG2UUyeZch24" />
     </application>
 
 </manifest>

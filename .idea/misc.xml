@@ -20,9 +20,18 @@
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.25" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/elemento.xml" value="0.5" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/menu/bottom_navigation.xml" value="0.3384615384615385" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_appointments_talker.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_available_professionals.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_diagnoses_talker.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.184375" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_locations_talker.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.2708333333333333" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
