@@ -177,7 +177,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especialidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -213,7 +213,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -226,7 +226,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Virtual"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -321,7 +321,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especialidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -334,7 +334,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Depresión post traumática"
+                                android:text="Psicología"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -357,7 +357,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -370,7 +370,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Virtual"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -465,7 +465,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especialidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -478,7 +478,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Depresión post traumática"
+                                android:text="Psiquiatría"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -501,7 +501,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -514,7 +514,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Presencial"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -609,7 +609,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especialidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -622,7 +622,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Depresión post traumática"
+                                android:text="Psicología del deporte"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -645,7 +645,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -658,7 +658,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Presencial"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -753,7 +753,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especialidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -766,7 +766,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Depresión post traumática"
+                                android:text="Psicología clinica"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -789,7 +789,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -802,7 +802,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Virtual"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -897,7 +897,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Diagnóstico: "
+                                android:text="Especilidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -910,7 +910,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Depresión post traumática"
+                                android:text="Psiquiatría infantil"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -933,7 +933,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fecha: "
+                                android:text="Modalidad: "
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -946,7 +946,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="21/06/2022"
+                                android:text="Presencial"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
@@ -1041,7 +1041,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Diagnóstico: "
+                            android:text="Especialidad: "
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -1054,7 +1054,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Depresión post traumática"
+                            android:text="Ansiedad"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -1077,7 +1077,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Fecha: "
+                            android:text="Modalidad: "
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -1090,7 +1090,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="21/06/2022"
+                            android:text="Virtual"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"

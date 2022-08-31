@@ -17,20 +17,33 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import edu.puj.talktome.databinding.ActivityAppointmentsTalkerBinding;
+import edu.puj.talktome.databinding.ActivityHistoryBinding;
+
 public class AppointmentsTalkerActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    private ActivityAppointmentsTalkerBinding binding;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        binding = ActivityAppointmentsTalkerBinding.inflate(getLayoutInflater());
+
         setContentView(R.layout.activity_appointments_talker);
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
+
+        binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
+
+        binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
+
+        binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
+
     }
 
     private void initWidgets()

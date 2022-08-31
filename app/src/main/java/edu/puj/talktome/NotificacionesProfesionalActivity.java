@@ -6,16 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class NotificacionesProfesionalActivity extends AppCompatActivity {
+import edu.puj.talktome.databinding.ActivityHistoryBinding;
+import edu.puj.talktome.databinding.ActivityNotificacionesProfesionalBinding;
 
+public class NotificacionesProfesionalActivity extends AppCompatActivity {
+    private ActivityNotificacionesProfesionalBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notificaciones_profesional);
-    }
+        binding = ActivityNotificacionesProfesionalBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-    public void onClick(View view) {
-        startActivity(new Intent(this, ScheduleCitaActivity.class));
+        binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
+
+        binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
+
+        binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
     }
 
 }

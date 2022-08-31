@@ -38,8 +38,8 @@ public class SolicitudesActivity extends AppCompatActivity {
         }*/
     }
 
-    public void onClick(View view) {
 
-        //startActivity(new Intent(this, );
+    public void onClick (View view){
+        startActivity(new Intent(this, ScheduleCitaActivity.class));
     }
 }

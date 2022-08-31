@@ -97,6 +97,7 @@
                 tools:ignore="MissingConstraints">
             <ListView
                 android:id="@+id/listaPacientes"
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"

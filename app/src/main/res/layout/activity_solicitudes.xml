@@ -91,6 +91,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Request1"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content">
@@ -155,7 +157,6 @@
                     android:gravity="center"
                     android:scaleType="centerInside"
                     android:src="@drawable/aceptar"
-                    android:onClick="onClick"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/DatePatient1"
                     app:layout_constraintTop_toTopOf="parent"
@@ -178,6 +179,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Request2"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -266,6 +269,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Request3"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -354,6 +359,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Request4"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -442,6 +449,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Request5"
+                android:onClick="onClick"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

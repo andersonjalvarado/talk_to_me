@@ -81,7 +81,7 @@
     <string name="mis_pacientes">Mis pacientes</string>
     <string name="pacientes">Pacientes</string>
     <string name="titulo_history">History</string>
-    <string name="informacion_history">Here you can see appointments you have had</string>
+    <string name="informacion_history">Aquí puedes ver tu historial</string>
     <string name="informacion_history_por">Realizado por: </string>
     <string name="informacion_history_date">Date: </string>
     <string name="informacion_history_date_description">21/06/2022</string>
