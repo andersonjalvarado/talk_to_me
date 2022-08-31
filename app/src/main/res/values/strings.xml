@@ -7,6 +7,7 @@
     <string name="Registrarse">Registrarse</string>
     <string name="Nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
+    <string name="Fecha">Fecha de nacimiento</string>
     <string name="TipoId">TipoId</string>
     <string name="NId">Número de Id</string>
     <string name="Cel">Celular</string>

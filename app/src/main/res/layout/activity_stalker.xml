@@ -87,7 +87,7 @@
 
             <LinearLayout
                 android:layout_width="366dp"
-                android:layout_height="605dp"
+                android:layout_height="669dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="-100dp"
                 android:layout_marginRight="20dp"
@@ -141,6 +141,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"></com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fechaTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:hint="@string/Fecha"
+                    app:startIconDrawable="@drawable/ic_calendar_">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textNacimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"></com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tipoIdTextField"
