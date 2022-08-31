@@ -9,9 +9,6 @@ import java.util.List;
 public class PerfilProfesional2Activity extends AppCompatActivity {
 
     private ActivityPerfilProfesional2Binding binding;
-    List<String> disponibilidades;
-    List<String> modalidades;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
