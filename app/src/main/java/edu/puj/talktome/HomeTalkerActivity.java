@@ -16,11 +16,10 @@ public class HomeTalkerActivity extends AppCompatActivity {
         binding = ActivityHomeTalkerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, PerfilProfesional2Activity.class)));
+        binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
 
         binding.btnUbicacion.setOnClickListener(view -> startActivity(new Intent(this, LocationsTalkerActivity.class)));
 
-        //Falta el calendario, lo miro más tarde
         binding.btnCita.setOnClickListener(view -> startActivity(new Intent(this, AppointmentsTalkerActivity.class)));
 
         binding.btnDiagnostico.setOnClickListener(view -> startActivity(new Intent(this, DiagnosesTalkerActivity.class)));
