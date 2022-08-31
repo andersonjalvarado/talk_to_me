@@ -1,7 +1,10 @@
 package edu.puj.talktome;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 import org.json.JSONException;
@@ -33,5 +36,10 @@ public class SolicitudesActivity extends AppCompatActivity {
         } catch (JSONException | IOException e) {
             e.printStackTrace();
         }*/
+    }
+
+    public void onClick(View view) {
+
+        //startActivity(new Intent(this, );
     }
 }

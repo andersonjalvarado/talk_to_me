@@ -2,6 +2,8 @@ package edu.puj.talktome;
 
 import androidx.appcompat.app.AppCompatActivity;
 import edu.puj.talktome.databinding.ActivityPerfilProfesional2Binding;
+
+import android.content.Intent;
 import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;

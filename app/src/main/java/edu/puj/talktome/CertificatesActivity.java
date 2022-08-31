@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import edu.puj.talktome.databinding.ActivityAvailableProfessionalsBinding;
 import edu.puj.talktome.databinding.ActivityCertificatesBinding;
 import edu.puj.talktome.data.CertificatesFromJson;
 
