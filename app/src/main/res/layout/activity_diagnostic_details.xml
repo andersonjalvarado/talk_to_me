@@ -4,76 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundCerti"
-    tools:context=".DiagnosticDetailsActivity">
+    tools:context=".DiagnosticDetailsActivity"
+    android:background="@color/blue_bckgr2"
+    android:padding="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerSuperior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backgTitle"
-        android:layout_margin="15dp"
+        android:background="@color/blue_bckgr3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/titleDiagnostic"
+            android:id="@+id/conteinerInformation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/iconDetailsDiagnostic"
+            app:layout_constraintEnd_toStartOf="@+id/pincipalLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
 
             <TextView
-                android:id="@+id/titleDeDiagnostic"
+                android:id="@+id/principalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="@string/titulo_diagnostico"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="34sp"
                 android:textStyle="bold"
+                android:transitionName="textTrans"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/contentdetailsDiagnostic"
+
                 android:layout_width="250dp"
-                android:layout_marginTop="50dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/contentDetailsDiagnostic"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:transitionName="textTrans"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/titleDeDiagnostic"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/principalTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <ImageView
-            android:id="@+id/iconDetailsDiagnostic"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="15dp"
+            android:id="@+id/pincipalLogo"
+            android:layout_width="78dp"
+            android:layout_height="68dp"
             android:src="@drawable/diagnostico"
-            app:layout_constraintStart_toEndOf="@+id/titleDiagnostic"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintStart_toEndOf="@+id/conteinerInformation"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMedio"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:background="@color/white"
         android:padding="10dp"
         app:circularflow_defaultRadius="10dp"

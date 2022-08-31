@@ -24,5 +24,10 @@ public class HomeProfesionalActivity extends AppCompatActivity {
         binding.btnCita.setOnClickListener(view -> startActivity(new Intent(this, AppointmentsTalkerActivity.class)));
 
         binding.btnPatients.setOnClickListener(view -> startActivity(new Intent(this, ListTalkerActivity.class)));
+
+        binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilProfesional2Activity.class)));
+
+        binding.btnListaPacientes.setOnClickListener(view -> startActivity(new Intent(this, ListTalkerActivity.class)));
+        
     }
 }

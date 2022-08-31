@@ -270,7 +270,7 @@
                 android:padding="5dp">
 
                 <ImageButton
-                    android:id="@+id/btnPerfilProfesional"
+                    android:id="@+id/btnListaPacientes"
                     android:layout_width="45dp"
                     android:layout_height="28dp"
                     android:background="@null"
@@ -281,19 +281,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/btnCitas"
-                    android:layout_width="45dp"
-                    android:layout_height="28dp"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/citas"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btnNotification"
-                    app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="5dp" />
 
                 <ImageButton
                     android:id="@+id/btnNotification"
@@ -304,7 +291,7 @@
                     android:src="@drawable/notificacion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-                    app:layout_constraintStart_toEndOf="@+id/btnCitas"
+                    app:layout_constraintStart_toEndOf="@+id/btnListaPacientes"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton

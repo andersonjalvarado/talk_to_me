@@ -223,6 +223,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginTop="15dp"
         android:padding="5dp">
 
         <ImageButton
@@ -246,19 +248,21 @@
             android:src="@drawable/notificacion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-            app:layout_constraintStart_toEndOf="@+id/btnCitas"
+            app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnCitas"
+            android:id="@+id/btnPerfilProfesional"
             android:layout_width="45dp"
             android:layout_height="28dp"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/citas"
+            android:src="@drawable/lupa"
+            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

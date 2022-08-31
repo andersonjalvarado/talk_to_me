@@ -64,10 +64,16 @@
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.30434782608695654" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.30434782608695654" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_list_pacientes.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_locations_talker.xml" value="0.32083333333333336" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_login.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_main.xml" value="0.15602836879432624" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.32083333333333336" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_perfil_talker.xml" value="0.19078947368421054" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_registro.xml" value="0.32083333333333336" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_solicitudes.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.32083333333333336" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/calendar_cell.xml" value="0.32083333333333336" />
         <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.3723958333333333" />
       </map>
     </option>
