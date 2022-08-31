@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AvailableProfessionalsActivity"
+    tools:context=".HistoryActivity"
     android:background="@color/blue_bckgr2"
     android:padding="15dp">
 
@@ -954,20 +954,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="15dp"
-        android:padding="10dp">
-        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aquí va el menú"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:transitionName="textTrans"
+        android:layout_marginTop="15dp"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/btnPerfil"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnNotification"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/notificacion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
+            app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPerfilProfesional"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lupa"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

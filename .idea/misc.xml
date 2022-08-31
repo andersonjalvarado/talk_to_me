@@ -3,6 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/drawable/archivo.xml" value="0.2685" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_appointments_details_professional.xml" value="0.2" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_appointments_talker.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_available_professionals.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_certificates.xml" value="0.12604166666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_diagnoses_talker.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_history.xml" value="0.2" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.1265625" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_home_proffesional.xml" value="0.264" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.1265625" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_list_pacientes.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_main.xml" value="0.24320652173913043" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_manage_appointments_details_professional.xml" value="0.176" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_notificaciones_talker.xml" value="0.210727969348659" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_perfil_profesional.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.1265625" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_perfil_talker.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_schedule_cita.xml" value="0.12604166666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_solicitudes.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.27447916666666666" />
+        <entry key="..\:/Universidad/SextoSemestre/CompuMovil/Proyecto/E1/GitAnderson/TTM2/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.3484375" />
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.358695652173913" />
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -12,32 +34,12 @@
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.25" />
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.22" />
         <entry key="..\:/Users/DELLPHOTO/Documents/Movil/talk_to_me/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_appointments_details_professional.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_appointments_talker.xml" value="0.2" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_available_professionals.xml" value="0.33" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_certificates.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_diagnoses_talker.xml" value="0.33" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_diagnostic_details.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_history.xml" value="0.358695652173913" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.358695652173913" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.25" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_list_pacientes.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_locations_talker.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_manage_appointments_details_professional.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_notificaciones_talker.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_perfil_profesional.xml" value="0.33" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.2" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_perfil_talker.xml" value="0.25" />
+        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.25" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_registro.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_role.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_solicitudes.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.2" />
+        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.25" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.25" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/calendar_cell.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/layout/elemento.xml" value="0.5" />
         <entry key="..\:/Users/DELLPHOTO/Downloads/talk_to_me/app/src/main/res/menu/bottom_navigation.xml" value="0.3384615384615385" />
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.25677083333333334" />
@@ -45,7 +47,7 @@
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_available_professionals.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_diagnoses_talker.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.184375" />
-        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.1" />
+        <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_locations_talker.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Usuario/Desktop/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.2708333333333333" />
         <entry key="..\:/Users/Usuario/Documents/talk_to_me/app/src/main/res/layout/activity_appointments_details_professional.xml" value="0.184375" />

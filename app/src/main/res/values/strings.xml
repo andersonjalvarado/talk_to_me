@@ -59,6 +59,7 @@
     <string name="content_patients">Aquí puedes ver tus pacientes</string>
     <string name="content_detailsAppoProfessinal">Aquí puedes ver tus citas programadas</string>
     <string name="boton_getionarCita">Gestionar Cita</string>
+    <string name="boton_confirmarCita">Confirmar Cita</string>
     <string name="boton_reprogramar_cita">Reprogramar Cita</string>
     <string name="boton_cancelar_cita">Cancelar Cita</string>
     <string name="boton_getionarPerfil">Editar</string>
