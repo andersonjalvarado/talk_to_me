@@ -26,5 +26,8 @@ public class HomeTalkerActivity extends AppCompatActivity {
 
         binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
 
+        binding.btnHistorial.setOnClickListener( view -> startActivity(new Intent( this, HistoryActivity.class)));
+
+        binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
     }
 }

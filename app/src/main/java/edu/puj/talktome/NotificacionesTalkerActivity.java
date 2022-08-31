@@ -2,7 +2,9 @@ package edu.puj.talktome;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class NotificacionesTalkerActivity extends AppCompatActivity {
 
@@ -11,4 +13,8 @@ public class NotificacionesTalkerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificaciones_talker);
     }
+
+    /*public void onClick(View view) {
+        startActivity(new Intent( this, ));
+    }*/
 }

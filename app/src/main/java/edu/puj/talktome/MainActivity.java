@@ -14,7 +14,6 @@ import android.view.animation.AnimationUtils;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
