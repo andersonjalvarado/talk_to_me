@@ -4,131 +4,139 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundCerti"
-    tools:context=".CertificatesActivity">
+    tools:context=".CertificatesActivity"
+    android:background="@color/blue_bckgr2"
+    android:padding="15dp">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerSuperior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backgTitle"
-        android:layout_margin="15dp"
+        android:background="@color/blue_bckgr3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/titleC"
-            android:layout_width="wrap_content"
+            android:id="@+id/conteinerInformation"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/iconCertificates"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
 
             <TextView
-                android:id="@+id/titleCertificates"
+                android:id="@+id/principalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Certificados"
+                android:text="@string/titulo_profesionales"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
+                android:transitionName="textTrans"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/contentC"
                 android:layout_width="250dp"
-                android:layout_marginTop="50dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/content_certificates"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:transitionName="textTrans"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/titleCertificates"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/principalTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <ImageView
-            android:id="@+id/iconCertificates"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/certificados"
-            app:layout_constraintStart_toEndOf="@+id/titleC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
-    <LinearLayout
-        android:id="@+id/listaC"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-       <!-- <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_bckgr2"
-            android:contentDescription="Scroll"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-            app:layout_constraintVertical_bias="1.0">-->
 
-    <ListView
-        android:id="@+id/listaCertificados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-        <!-- </ScrollView> -->
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/AddCertificates"
+
+        <ImageView
+            android:id="@+id/pincipalLogo"
+            android:layout_width="78dp"
+            android:layout_height="68dp"
+            android:src="@drawable/certificados"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/conteinerInformation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/containerMedio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="0dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/listaC">
+        android:background="@color/blue_bckgr2"
+        android:contentDescription="@string/scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
+        app:layout_constraintBottom_toTopOf="@id/containerMenu">
 
-        <Button
-            android:id="@+id/BotonAddCertificates"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/colorButton"
-            android:text="Agregar"/>
-    </LinearLayout>
+            android:layout_width="match_parent">
+
+            <LinearLayout
+                android:id="@+id/listaC"
+                android:layout_width="match_parent"
+                android:layout_height="530dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/AddCertificates"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ListView
+                    android:id="@+id/listaCertificados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/AddCertificates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/listaC">
+
+                <Button
+                    android:id="@+id/BotonAddCertificates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/colorButton"
+                    android:text="Agregar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMenu"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddCertificates"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:padding="5dp">
 
         <ImageButton
@@ -165,7 +173,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

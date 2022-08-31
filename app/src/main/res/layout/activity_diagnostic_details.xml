@@ -149,14 +149,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMenu"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_marginBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerMedio"
+
+        android:layout_marginTop="15dp"
         android:padding="5dp">
 
         <ImageButton
@@ -180,16 +180,17 @@
             android:src="@drawable/notificacion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-            app:layout_constraintStart_toEndOf="@+id/btnCitas"
+            app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnCitas"
+            android:id="@+id/btnPerfilProfesional"
             android:layout_width="45dp"
             android:layout_height="28dp"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/citas"
+            android:src="@drawable/lupa"
+            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

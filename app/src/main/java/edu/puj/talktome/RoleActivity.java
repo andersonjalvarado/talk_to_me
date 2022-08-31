@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class RoleActivity extends AppCompatActivity {
 
-    private ActivityRoleBinding binding;
+    public ActivityRoleBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -59,4 +59,18 @@
     <string name="titlePerfilTalker">Mi Perfil</string>
     <string name="contentPerfilTalker">Aquí puedes ver la información que aparece en tu perfil</string>
     <string name="contentDetailsDiagnostic">Aquí puedes ver los detalles de tu diagnóstico</string>
+    <string name="domingo">DO</string>
+    <string name="lunes">LU</string>
+    <string name="martes">MA</string>
+    <string name="miercoles">MI</string>
+    <string name="jueves">JU</string>
+    <string name="viernes">VI</string>
+    <string name="sabado">SA</string>
+    <string name="mesAnterior"><![CDATA[<-]]></string>
+    <string name="mesProximo"><![CDATA[->]]></string>
+    <string name="scroll">Scroll</string>
+    <string name="mis_certificados">Mis certificados</string>
+    <string name="solicitudes">Solicitudes</string>
+    <string name="mis_pacientes">Mis pacientes</string>
+    <string name="pacientes">Pacientes</string>
 </resources>

@@ -2,13 +2,21 @@ package edu.puj.talktome;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-public class AppointmentsDetailsTalkerActivity extends AppCompatActivity {
+import edu.puj.talktome.databinding.ActivityAppointmentsDetailsTalkerBinding;
+import edu.puj.talktome.databinding.ActivityLoginBinding;
 
+public class AppointmentsDetailsTalkerActivity extends AppCompatActivity {
+    private ActivityAppointmentsDetailsTalkerBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointments_details_talker);
+        binding = ActivityAppointmentsDetailsTalkerBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.btnUbicacion.setOnClickListener(view -> startActivity(new Intent(this, LocationsTalkerActivity.class)));
+
     }
 }

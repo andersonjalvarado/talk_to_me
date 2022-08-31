@@ -24,5 +24,7 @@ public class HomeTalkerActivity extends AppCompatActivity {
 
         binding.btnDiagnostico.setOnClickListener(view -> startActivity(new Intent(this, DiagnosesTalkerActivity.class)));
 
+        binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
+
     }
 }

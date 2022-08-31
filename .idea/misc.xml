@@ -54,6 +54,21 @@
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_solicitudes.xml" value="0.21603260869565216" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_sprofesional.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.1" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_details_professional.xml" value="0.3333333333333333" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.3723958333333333" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_talker.xml" value="0.3723958333333333" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_available_professionals.xml" value="0.1" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_certificates.xml" value="0.3723958333333333" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_diagnoses_talker.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_diagnostic_details.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_home_profesional.xml" value="0.30434782608695654" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.30434782608695654" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_list_pacientes.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_login.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_perfil_talker.xml" value="0.19078947368421054" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_solicitudes.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.32083333333333336" />
+        <entry key="..\:/proyecto/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.3723958333333333" />
       </map>
     </option>
   </component>

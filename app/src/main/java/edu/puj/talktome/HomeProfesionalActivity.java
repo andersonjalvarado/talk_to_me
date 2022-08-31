@@ -17,6 +17,12 @@ public class HomeProfesionalActivity extends AppCompatActivity {
         binding = ActivityHomeProfesionalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.botonLista.setOnClickListener(view -> startActivity(new Intent(this, SolicitudesActivity.class)));
+        binding.btnCertificados.setOnClickListener(view -> startActivity(new Intent(this, CertificatesActivity.class)));
+
+        binding.btnRequest.setOnClickListener(view -> startActivity(new Intent(this, SolicitudesActivity.class)));
+
+        binding.btnCita.setOnClickListener(view -> startActivity(new Intent(this, AppointmentsTalkerActivity.class)));
+
+        binding.btnPatients.setOnClickListener(view -> startActivity(new Intent(this, ListTalkerActivity.class)));
     }
 }
