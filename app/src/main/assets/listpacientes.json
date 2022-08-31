@@ -1,0 +1,34 @@
+{
+  "TotalCount": 5,
+  "Patients": [
+    {
+      "Name": "Tony Stark",
+      "Problem": "Ansiedad",
+      "Mode": "Virtual",
+      "Photo":"https://assets.puzzlefactory.pl/puzzle/387/881/original.jpg"
+    },
+    {
+      "Name": "Steve Rogers",
+      "Problem": "Problemas Sociales",
+      "Mode": "Virtual",
+      "Photo": "https://i.pinimg.com/564x/77/02/d4/7702d489489758f69a3764adcf9ad4ea.jpg"
+    },{
+      "Name": "Thor Odinson",
+      "Problem": "Depresión",
+      "Mode": "Virtual",
+      "Photo": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/thor-1653380224.jpg"
+    },
+    {
+      "Name": "Wanda Maximoff",
+      "Problem": "Traumas",
+      "Mode": "Virtual",
+      "Photo": "http://pm1.narvii.com/7843/45bd4d96937aad19cfc8ba614b72cd7d7c50f6far1-400-400v2_00.jpg"
+    },
+    {
+      "Name": "Natasha Romanoff",
+      "Problem": "Problemas familiares",
+      "Mode": "Virtual",
+      "Photo": "https://i.pinimg.com/originals/1b/2d/86/1b2d86e938dedebe638b69977253b13c.jpg"
+    }
+  ]
+}

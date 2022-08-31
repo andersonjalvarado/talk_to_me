@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".HomeTalkerActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/botonLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home Profesional"

@@ -1,0 +1,24 @@
+{
+  "TotalCount": 4,
+  "Certificados": [
+    {
+      "Title": "Maestría en Psicología Clínica y de la Familia",
+      "University": "De: Universidad Santo Tomás",
+      "Date": "Fecha: 21/04/2022"
+    },
+    {
+      "Title": "Maestría en Psicología",
+      "University": "De: Universidad de los Andes",
+      "Date": "Fecha: 12/02/2020"
+    },{
+      "Title": "Especialización en Psicología del Deporte y el Ejercicio",
+      "University": "De: Universidad de los Andes",
+      "Date": "Fecha: 09/06/2019"
+    },
+    {
+      "Title": "Pregrado en Psicología",
+      "University": "De: Pontificia Universidad Javeriana",
+      "Date": "Fecha: 27/11/2016"
+    }
+  ]
+}

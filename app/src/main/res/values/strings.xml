@@ -50,4 +50,13 @@
     <string name="mis_diagnoticos">Mis diagnósticos</string>
     <string name="mis_citas">Mis citas</string>
     <string name="ubicaciones">Ubicaciones</string>
+    <string name="content_request">Aquí puedes ver las citas solicitadas</string>
+    <string name="content_certificates">Aquí puedes ver tus certificados</string>
+    <string name="content_patients">Aquí puedes ver tus pacientes</string>
+    <string name="content_detailsAppoProfessinal">Aquí puedes ver tus citas programadas</string>
+    <string name="boton_getionarCita">Gestionar Cita</string>
+    <string name="boton_getionarPerfil">Editar</string>
+    <string name="titlePerfilTalker">Mi Perfil</string>
+    <string name="contentPerfilTalker">Aquí puedes ver la información que aparece en tu perfil</string>
+    <string name="contentDetailsDiagnostic">Aquí puedes ver los detalles de tu diagnóstico</string>
 </resources>
