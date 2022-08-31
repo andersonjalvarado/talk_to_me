@@ -8,6 +8,7 @@
     <string name="Nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
     <string name="Fecha">Fecha de nacimiento</string>
+    <string name="fecha_cita">Fecha: </string>
     <string name="TipoId">TipoId</string>
     <string name="NId">Número de Id</string>
     <string name="Cel">Celular</string>
@@ -36,8 +37,11 @@
     <string name="Disponible">Disponible</string>
     <string name="NoDisponible">No Disponible</string>
     <string name="Cita">Solicitar una Cita</string>
+    <string name="cita_con">Cita con: </string>
     <string name="titulo_diagnostico">Diagnóstico</string>
+    <string name="titulo_notificaiones">Notificaciones</string>
     <string name="informacion_diagnostico">Aquí puedes ver tus diagnósticos</string>
+    <string name="informacion_notificaiones">Aquí puedes ver tus notificaciones</string>
     <string name="titulo_citas">Citas</string>
     <string name="informacion_citas">Aquí puedes ver tus citas</string>
     <string name="informacion_detalle_citas">Aquí puedes ver tu cita con más detalles</string>
@@ -55,6 +59,8 @@
     <string name="content_patients">Aquí puedes ver tus pacientes</string>
     <string name="content_detailsAppoProfessinal">Aquí puedes ver tus citas programadas</string>
     <string name="boton_getionarCita">Gestionar Cita</string>
+    <string name="boton_reprogramar_cita">Reprogramar Cita</string>
+    <string name="boton_cancelar_cita">Cancelar Cita</string>
     <string name="boton_getionarPerfil">Editar</string>
     <string name="titlePerfilTalker">Mi Perfil</string>
     <string name="contentPerfilTalker">Aquí puedes ver la información que aparece en tu perfil</string>
@@ -73,4 +79,14 @@
     <string name="solicitudes">Solicitudes</string>
     <string name="mis_pacientes">Mis pacientes</string>
     <string name="pacientes">Pacientes</string>
+    <string name="titulo_history">History</string>
+    <string name="informacion_history">Here you can see appointments you have had</string>
+    <string name="informacion_history_por">Realizado por: </string>
+    <string name="informacion_history_date">Date: </string>
+    <string name="informacion_history_date_description">21/06/2022</string>
+    <string name="informacion_history_diagnostic">Diagnostic: </string>
+    <string name="informacion_history_diagnostic_description">Trauma </string>
+    <string name="mis_certifications">Mis certificaciones</string>
+    <string name="mis_peticiones">Mis peticiones</string>
+
 </resources>
