@@ -14,7 +14,6 @@ public class NotificacionesTalkerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notificaciones_talker);
     }
 
-    /*public void onClick(View view) {
-        startActivity(new Intent( this, ));
+/*    public void onClick(View view) {
     }*/
 }
