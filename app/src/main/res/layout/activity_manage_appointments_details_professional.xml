@@ -69,6 +69,7 @@
             android:src="@drawable/citas"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0.5"
             app:layout_constraintStart_toEndOf="@+id/titleAppP"
             app:layout_constraintTop_toTopOf="parent" />
 

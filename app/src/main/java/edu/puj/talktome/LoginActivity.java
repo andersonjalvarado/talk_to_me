@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.btnInicioSesion.setOnClickListener(view -> startActivity(new Intent(this, HomeTalkerActivity.class)));
         binding.registrateTextView.setOnClickListener(view -> startActivity(new Intent(this, RoleActivity.class)));
     }
 }

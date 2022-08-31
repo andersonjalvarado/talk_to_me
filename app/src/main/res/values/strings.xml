@@ -49,7 +49,7 @@
     <string name="informacion_profesionales">Aquí puedes ver los profesionales disponibles</string>
     <string name="mostar_ubicación">Mostrar ubicación en el mapa</string>
     <string name="bienvenida">Bienvenido a Talk To Me</string>
-    <string name="mensaje">Cuida tu salud desde cualquier lugar</string>
+    <string name="mensaje">Cuida tu salud mental desde cualquier lugar</string>
     <string name="mi_historial">Mi historial</string>
     <string name="mis_diagnoticos">Mis diagnósticos</string>
     <string name="mis_citas">Mis citas</string>
@@ -88,5 +88,6 @@
     <string name="informacion_history_diagnostic_description">Trauma </string>
     <string name="mis_certifications">Mis certificaciones</string>
     <string name="mis_peticiones">Mis peticiones</string>
+    <string name="edad">Edad</string>
 
 </resources>

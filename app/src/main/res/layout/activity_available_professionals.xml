@@ -64,6 +64,7 @@
             android:layout_width="78dp"
             android:layout_height="68dp"
             android:src="@drawable/perfil"
+            android:alpha="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/conteinerInformation"
@@ -115,7 +116,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional1"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -256,7 +257,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional2"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -398,7 +399,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional3"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -540,7 +541,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional4"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -682,7 +683,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional5"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -824,7 +825,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/logoProfessional6"
                             android:layout_width="78dp"
                             android:layout_height="68dp"
@@ -966,7 +967,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/logoProfessional7"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
