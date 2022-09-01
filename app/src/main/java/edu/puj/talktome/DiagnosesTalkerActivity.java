@@ -22,7 +22,9 @@ public class DiagnosesTalkerActivity extends AppCompatActivity {
         binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
 
         binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
+
     }
+
 
     public void onClick(View view) {
         startActivity(new Intent(this, DiagnosticDetailsActivity.class));

@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import edu.puj.talktome.databinding.ActivityDiagnosesTalkerBinding;
+import edu.puj.talktome.databinding.ActivityDiagnosticDetailsBinding;
 
 public class DiagnosticDetailsActivity extends AppCompatActivity {
-    private ActivityDiagnosesTalkerBinding binding;
+    private ActivityDiagnosticDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDiagnosesTalkerBinding.inflate(getLayoutInflater());
+        binding = ActivityDiagnosticDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));

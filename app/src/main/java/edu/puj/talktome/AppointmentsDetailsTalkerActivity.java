@@ -22,8 +22,7 @@ public class AppointmentsDetailsTalkerActivity extends AppCompatActivity {
 
         binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
 
-        binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
-
+        binding.btnNotification.setOnClickListener(view -> startActivity(new Intent(this, NotificacionesTalkerActivity.class)));
 
     }
 }
