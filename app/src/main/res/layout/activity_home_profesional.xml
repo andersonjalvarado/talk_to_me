@@ -170,12 +170,10 @@
                     android:layout_height="155dp"
                     android:adjustViewBounds="true"
                     android:background="@color/pink_bckgr_btn"
-
                     android:padding="20dp"
                     android:scaleType="fitCenter"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-
                     app:layout_constraintStart_toEndOf="@+id/btn_certificados"
                     android:layout_marginStart="17dp"
                     android:src="@drawable/solicitud" />

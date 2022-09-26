@@ -199,6 +199,7 @@
                 android:backgroundTint="@color/blue_btn"
                 android:text="@string/boton_reprogramar_cita"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:cornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
@@ -209,6 +210,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/blue_btn"
                 android:text="@string/boton_cancelar_cita"
+                app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_reprogramar_cita" />

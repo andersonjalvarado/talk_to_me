@@ -205,6 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/blue_btn"
+                app:cornerRadius="15dp"
                 android:text="@string/mostar_ubicación"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
