@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "573153312326",
+    "project_id": "talk-to-me-ecd24",
+    "storage_bucket": "talk-to-me-ecd24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573153312326:android:9ef60485dacfd34edb5447",
+        "android_client_info": {
+          "package_name": "edu.puj.talktome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573153312326-h672tv5pe0h6k9tivb4qte63q3hgl7fk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmPvU2wUxxcm64PKA3Coz52tHFqqyfHCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573153312326-h672tv5pe0h6k9tivb4qte63q3hgl7fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

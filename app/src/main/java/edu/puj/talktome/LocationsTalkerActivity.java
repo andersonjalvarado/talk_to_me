@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class LocationsTalkerActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private final LatLng BOGOTA = new LatLng(4.659032, -74.093632);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +29,9 @@ public class LocationsTalkerActivity extends AppCompatActivity implements OnMapR
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(74.06475033068541, -74.06475033068541);
         mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("Universidad Javeriana"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                .position(BOGOTA)
+                .title("Parque Central Simón Bolivar"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BOGOTA,11));
     }
 }

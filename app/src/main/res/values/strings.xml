@@ -91,4 +91,21 @@
     <string name="mis_peticiones">Mis peticiones</string>
     <string name="edad">Edad</string>
 
+
+    <string name="snackBar_dismiss_label">cerrar</string>
+    <string name="home_label">Hola %1$s, con id %2$s</string>
+    <string name="forgot_password_label">Forgot Password</string>
+    <string name="signup_label">SignUp</string>
+    <string name="login_label">Login</string>
+    <string name="password_label">Password</string>
+    <string name="email_label">Email</string>
+    <string name="mail_error_label">El email no puede estar vacio.</string>
+    <string name="error_pass_label">La contraseña no puede estar vacia.</string>
+    <string name="create_user_button_label">Create User</string>
+    <string name="name_label">Name</string>
+    <string name="create_a_new_profile">Create a new Profile</string>
+    <string name="phone_label">Phone</string>
+    <string name="logout_menu_item">Lougout</string>
+    <string name="message_chat_hint">Message</string>
+
 </resources>
