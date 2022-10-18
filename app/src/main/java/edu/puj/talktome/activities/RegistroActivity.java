@@ -18,9 +18,6 @@ public class RegistroActivity extends AppCompatActivity {
 
     private ActivityRegistroBinding binding;
 
-    private FirebaseAuth mAuth;
-    private FirebaseDatabase mDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

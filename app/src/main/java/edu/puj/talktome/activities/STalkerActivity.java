@@ -1,12 +1,9 @@
 package edu.puj.talktome.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivityStalkerBinding;
 import edu.puj.talktome.models.DatabaseRoutes;
 import edu.puj.talktome.models.UserInfo;
-import edu.puj.talktome.utils.AlertsHelper;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -25,12 +22,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-public class STalkerActivity extends AppCompatActivity implements View.OnClickListener {
+public class STalkerActivity extends BasicActivity implements View.OnClickListener {
 
     private ActivityStalkerBinding binding;
     private int dia, mes, ano;
 
-    private AlertsHelper alertsHelper;
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase;
 
@@ -46,11 +42,8 @@ public class STalkerActivity extends AppCompatActivity implements View.OnClickLi
         //Spinner android
         llenarSpinner();
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance();
-        binding.btnInicioSesion.setOnClickListener(view -> doSignup());
-        /*binding.btnInicioSesion.setOnClickListener(view -> {
-            registrarse();
-        });*/
+        binding.btnRegistrarse.setOnClickListener(view -> doSignup());
+
     }
     @Override
     public void onClick(View view) {
@@ -73,14 +66,14 @@ public class STalkerActivity extends AppCompatActivity implements View.OnClickLi
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
 
         if (email.isEmpty()) {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
+            //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
             binding.correoTextField.setErrorEnabled(true);
             binding.correoTextField.setError(getString(R.string.mail_error_label));
             return;
         }
 
         if (pass.isEmpty()) {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
+            //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
             binding.contrasenaTextField.setErrorEnabled(true);
             binding.contrasenaTextField.setError(getString(R.string.error_pass_label));
             return;
@@ -97,7 +90,7 @@ public class STalkerActivity extends AppCompatActivity implements View.OnClickLi
                             new Date().getTime());
                     reference.setValue(tmpUser).addOnSuccessListener(unused ->
                             {
-                                Intent intent = new Intent(this,RegistroActivity.class);
+                                Intent intent = new Intent(this, RegistroActivity.class);
                                 intent.putExtra("nombre",binding.nombreEditTextField.getText().toString());
                                 intent.putExtra("valor",getIntent().getStringExtra("valor"));
                                 startActivity(intent);
@@ -108,15 +101,8 @@ public class STalkerActivity extends AppCompatActivity implements View.OnClickLi
                 .addOnFailureListener(e ->
                         alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
     }
-    /*private void registrarse(){
-        Intent intent = new Intent(this,RegistroActivity.class);
-        intent.putExtra("nombre",binding.nombreEditTextField.getText().toString());
-        intent.putExtra("valor",getIntent().getStringExtra("valor"));
-        startActivity(intent);
-    }*/
 
     private void llenarSpinner(){
-
         String [] campos = new String[]{getString(R.string.CC),getString(R.string.TI),getString(R.string.CE),getString(R.string.RC)};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -127,6 +113,4 @@ public class STalkerActivity extends AppCompatActivity implements View.OnClickLi
         AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.tipoId_exposed);
         autoCompleteTextView.setAdapter(adapter);
     }
-
-
 }

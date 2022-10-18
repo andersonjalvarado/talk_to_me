@@ -11,8 +11,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserInfo {
     private String name;
+    //private String apellido;
     private String email;
+    //private long fechaNacimiento;
+    //private String tipoDocumento;
+    //private long numeroDocumento;
     private long phoneNumber;
+
     private long createdAt;
     private long lastLogin;
 }
