@@ -8,8 +8,8 @@
 
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/blue_bckgr2"
         android:contentDescription="Scroll"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,11 +87,12 @@
 
             <LinearLayout
                 android:layout_width="366dp"
-                android:layout_height="669dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="-100dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/white"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/border"
                 android:orientation="vertical"
                 android:padding="5dp">
 
