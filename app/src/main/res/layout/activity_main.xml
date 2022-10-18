@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_btn"
-    tools:context="MainActivity">
+    tools:context=".activities.MainActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -59,5 +59,10 @@
         app:layout_constraintTop_toBottomOf="@+id/deTextView" />
 
 
-
+    <!--<ListView
+        android:id="@+id/usersList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

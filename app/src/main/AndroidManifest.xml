@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -23,85 +24,92 @@
         android:theme="@style/Theme.TalkToMe"
         tools:targetApi="31">
         <activity
-            android:name=".NotificacionesProfesionalActivity"
+            android:name=".AuthenticatedActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.NotificacionesProfesionalActivity"
             android:exported="false" />
         <activity
-            android:name=".ScheduleCitaActivity"
+            android:name=".activities.ScheduleCitaActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentsProfesionalActivity"
+            android:name=".activities.AppointmentsProfesionalActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageAppointmentsDetailsProfessional"
+            android:name=".activities.ManageAppointmentsDetailsProfessional"
             android:exported="false" />
         <activity
-            android:name=".NotificacionesTalkerActivity"
+            android:name=".activities.NotificacionesTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilProfesionalActivity"
+            android:name=".activities.PerfilProfesionalActivity"
             android:exported="false" />
         <activity
-            android:name=".DiagnosticDetailsActivity"
+            android:name=".activities.DiagnosticDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilTalkerActivity"
+            android:name=".activities.PerfilTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".activities.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentsDetailsProfessional"
+            android:name=".activities.AppointmentsDetailsProfessional"
             android:exported="false" />
         <activity
-            android:name=".ListTalkerActivity"
+            android:name=".activities.ListTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".SolicitudesActivity"
+            android:name=".activities.SolicitudesActivity"
             android:exported="false" />
         <activity
-            android:name=".CertificatesActivity"
+            android:name=".activities.CertificatesActivity"
             android:exported="false" />
         <activity
-            android:name=".LocationsTalkerActivity"
+            android:name=".activities.LocationsTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".DiagnosesTalkerActivity"
+            android:name=".activities.DiagnosesTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".AvailableProfessionalsActivity"
+            android:name=".activities.AvailableProfessionalsActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentsDetailsTalkerActivity"
+            android:name=".activities.AppointmentsDetailsTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentsTalkerActivity"
+            android:name=".activities.AppointmentsTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilProfesional2Activity"
+            android:name=".activities.PerfilProfesional2Activity"
             android:exported="false" />
         <activity
-            android:name=".HomeProfesionalActivity"
+            android:name=".activities.HomeProfesionalActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeTalkerActivity"
+            android:name=".activities.HomeTalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistroActivity"
+            android:name=".activities.RegistroActivity"
             android:exported="false" />
         <activity
-            android:name=".SProfesionalActivity"
+            android:name=".activities.SProfesionalActivity"
             android:exported="false" />
         <activity
-            android:name=".STalkerActivity"
+            android:name=".activities.STalkerActivity"
             android:exported="false" />
         <activity
-            android:name=".RoleActivity"
+            android:name=".activities.RoleActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -113,6 +121,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA6SBWvwZsDv6s-hzesv0pKG2UUyeZch24" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"

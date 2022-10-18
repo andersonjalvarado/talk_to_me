@@ -4,9 +4,10 @@
 
 
 # Integrantes
-## Líder
-### [Anderson Alvarado](https://github.com/andersonjalvarado) 
-## Equipo de Desarollo
-### [Angie Castro](https://github.com/angCF) 
-### [Sebastian Martinez](https://github.com/Sebasgmv) 
+## Lideres
+### [Angie Castro](https://github.com/angCF)
 ### [Mauren Rivera](https://github.com/murvn77)
+## Equipo de Desarollo
+### [Anderson Alvarado](https://github.com/andersonjalvarado)
+### [Sebastian Martinez](https://github.com/Sebasgmv) 
+
