@@ -78,6 +78,7 @@ public class FragmentMap extends Fragment {
 
     //Light sensor variables
     final static float LIGHT_LIMIT = 2000.0f;
+    final static int ACELEROMETROX = 1;
     int whip = 0;
     SensorManager sensorManager;
     Sensor lightSensor, acelerometroSensor;
@@ -167,18 +168,13 @@ public class FragmentMap extends Fragment {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 if (googleMap != null) {
-                    float x = sensorEvent.values[0];
-                    System.out.println("Valor giro " + x);
-                    if (x <= 4 && whip == 0) {
-                        whip++;
-                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
 
-                        CameraUpdateFactory.scrollBy(600, 300);
-                    } else if (x > 4 && whip == 1) {
-                        whip++;
+                    if (sensorEvent.values[0] < ACELEROMETROX){
                         googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
-
-                        CameraUpdateFactory.scrollBy(-600, -300);
+                    } else if(sensorEvent.values[0] > ACELEROMETROX ) {
+                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_night_style));
+                    } else {
+                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_day2));
                     }
                 }
             }
@@ -188,6 +184,9 @@ public class FragmentMap extends Fragment {
 
             }
         };
+
+
+
         binding.materialButton.setOnClickListener(view1 -> findPlaces(binding.textInputLayout.getEditText().getText().toString()));
         binding.textInputLayout.getEditText().setImeOptions(EditorInfo.IME_ACTION_SEARCH);
         binding.textInputLayout.getEditText().setOnEditorActionListener((textView, i, keyEvent) -> {
