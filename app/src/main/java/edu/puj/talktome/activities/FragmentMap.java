@@ -173,8 +173,6 @@ public class FragmentMap extends Fragment {
                         googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
                     } else if(sensorEvent.values[0] > ACELEROMETROX ) {
                         googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_night_style));
-                    } else {
-                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_day2));
                     }
                 }
             }
