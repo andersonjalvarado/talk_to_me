@@ -41,6 +41,7 @@
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/drawable/ic_baseline_institutions_24.xml" value="0.1265" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/drawable/ic_calendar_.xml" value="0.1275" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/drawable/ic_phone.xml" value="0.142" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/drawable/selector.xml" value="0.1275" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_details_professional.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_details_talker.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_appointments_profesional.xml" value="0.10916919959473151" />
@@ -56,8 +57,10 @@
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_home_talker.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_list_pacientes.xml" value="0.21603260869565216" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_list_patients.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_locations_talker.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_login.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_manage_appointments_details_professional.xml" value="0.19519927536231885" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_notificaciones_talker.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_perfil_profesional2.xml" value="0.21" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_perfil_talker.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_registro.xml" value="0.10916919959473151" />
@@ -69,6 +72,7 @@
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/activity_stalker.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/contenido_id.xml" value="0.1" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/layout/item.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Usuario/Documents/GitHub/Proyecto/talk_to_me/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1935185185185185" />
       </map>
     </option>
   </component>

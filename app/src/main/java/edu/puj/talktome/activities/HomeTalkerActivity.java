@@ -17,10 +17,9 @@ import android.widget.ScrollView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeTalkerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeTalkerActivity extends AppCompatActivity {
 
     private ActivityHomeTalkerBinding binding;
-    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +35,39 @@ public class HomeTalkerActivity extends AppCompatActivity implements NavigationV
 
         binding.btnHistorial.setOnClickListener( view -> startActivity(new Intent( this, HistoryActivity.class)));
 
-       // binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
+        binding.bottomNavigation.setSelectedItemId(R.id.page_Home);
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.page_Notification:
+                        startActivity(new Intent(getApplicationContext(),NotificacionesTalkerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Home:
+                        return true;
+                    case R.id.page_Profile:
+                        startActivity(new Intent(getApplicationContext(),PerfilTalkerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        // binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
 
        // binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
 
        // binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
     }
 
-    @Override
+
+
+    /*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case 1:
@@ -59,6 +83,6 @@ public class HomeTalkerActivity extends AppCompatActivity implements NavigationV
                 break;
         }
         return false;
-    }
+    }*/
 
 }
