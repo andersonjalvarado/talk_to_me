@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="415dp"
-        android:layout_height="343dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:transitionName="imgTrans"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,16 +20,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="323dp"
-        android:layout_height="260dp"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/border"
+        android:padding="12dp"
         android:orientation="vertical"
         android:transitionName="linearTrans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
             android:id="@+id/rolTextView"
@@ -37,6 +37,22 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/Rol"
+            android:textAlignment="center"
+            android:textColor="@color/blue_btn"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/talkToMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="@color/blue_btn"
             android:textSize="34sp"
@@ -87,13 +103,11 @@
         <Button
             android:id="@+id/btn_registrarse"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/blue_btn"
             android:text="@string/Registrarse"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:cornerRadius="20dp" />
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

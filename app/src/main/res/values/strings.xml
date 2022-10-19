@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">Talk To Me</string>"Escoge tu Rol"
+    <string name="app_name">Talk To Me</string>
     <string name="Bienvenido">Bienvenid@ a</string>
-    <string name="Rol">Escoge tu Rol</string>
+    <string name="Rol">Escoge tu rol en</string>
     <string name="Talker">Talker</string>
     <string name="Profesional">Profesional</string>
     <string name="Registrarse">Registrarse</string>
+    <string name="RecContrasena">Recuperar contraseña</string>
     <string name="Nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
     <string name="Fecha">Fecha de nacimiento</string>

@@ -42,8 +42,6 @@ public class MainActivity extends LoginActivity {
         Animation animacion1 = AnimationUtils.loadAnimation(this, R.anim.desplazamiento_arriba);
         Animation animacion2 = AnimationUtils.loadAnimation(this,R.anim.desplazamiento_abajo);
 
-        binding.deTextView.setAnimation(animacion2);
-        binding.AndersonTextView.setAnimation(animacion2);
         binding.logo.setAnimation(animacion1);
         binding.nombre.setAnimation(animacion1);
 
@@ -54,7 +52,7 @@ public class MainActivity extends LoginActivity {
 
                 Pair[] pairs = new Pair[2];
                 pairs[0] = new Pair<View, String>(binding.logo,"imgTrans");
-                pairs[1] = new Pair<View, String>(binding.AndersonTextView,"linearTrans");
+                pairs[1] = new Pair<View, String>(binding.nombre,"linearTrans");
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
                 startActivity(intent, options.toBundle());
                 finish();

@@ -9,30 +9,27 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="415dp"
-        android:layout_height="343dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:transitionName="imgTrans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="323dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
-        android:padding="5dp"
-        android:layout_marginTop="5dp"
+        android:padding="12dp"
         android:orientation="vertical"
         android:transitionName="linearTrans"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nuevoTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
             android:id="@+id/bienvenidoTextView"
@@ -51,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/ttmTextView"
+            android:id="@+id/talkToMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -63,13 +60,15 @@
             android:transitionName="textTrans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginBottom="14dp"
+
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -78,9 +77,6 @@
                 android:layout_width="match_parent"
                 app:startIconDrawable="@drawable/ic_baseline_email_24"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="12dp"
                 app:endIconMode="clear_text"
                 android:hint="@string/Correo">
 
@@ -94,9 +90,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="10dp"
                 app:startIconDrawable="@drawable/ic_lock"
                 android:hint="@string/Contrasena"
                 app:passwordToggleEnabled="true">
@@ -111,15 +104,12 @@
         <Button
             android:id="@+id/btn_inicioSesion"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/blue_btn"
             android:text="@string/InicioSesion"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:cornerRadius="20dp" />
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
     </LinearLayout>
 
     <TextView
@@ -135,10 +125,8 @@
         android:transitionName="textTrans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/registrateTextView"
@@ -151,10 +139,25 @@
         android:textColor="@color/blue_bckgr"
         android:textSize="17dp"
         android:transitionName="textTrans"
+        app:layout_constraintBottom_toTopOf="@+id/recContrasena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nuevoTextView" />
+
+    <TextView
+        android:id="@+id/recContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/RecContrasena"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/blue_A700"
+        android:textSize="13dp"
+        android:layout_marginBottom="10dp"
+        android:transitionName="textTrans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nuevoTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/registrateTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
