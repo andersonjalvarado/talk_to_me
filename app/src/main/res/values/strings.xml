@@ -123,5 +123,11 @@
     <string name="camerax_intent">CameraX</string>
     <string name="permission_denied_label">No pude obtener el permiso necesario</string>
     <string name="capture_saved">Imagen guardada correctamente.</string>
+    <string name="nuevo_certificado">Agregar certificado</string>
+    <string name="nombre_titulo">Titulo</string>
+    <string name="nombre_institucion">Institucion</string>
+    <string name="tomar_Img">CAMARA</string>
+    <string name="cargar_Img">GALERIA</string>
+    <string name="fecha_certificado">Fecha Expedicion</string>
 
 </resources>

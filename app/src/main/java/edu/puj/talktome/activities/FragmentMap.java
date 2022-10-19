@@ -78,9 +78,10 @@ public class FragmentMap extends Fragment {
 
     //Light sensor variables
     final static float LIGHT_LIMIT = 2000.0f;
+    int whip = 0;
     SensorManager sensorManager;
-    Sensor lightSensor;
-    SensorEventListener lightSensorEventListener;
+    Sensor lightSensor, acelerometroSensor;
+    SensorEventListener lightSensorEventListener, acelerometroSensorEventListener;
     GoogleMap.OnMapLongClickListener longClickListener;
 
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -160,12 +161,33 @@ public class FragmentMap extends Fragment {
             }
         };
 
-
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-        
+        acelerometroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        acelerometroSensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                if (googleMap != null) {
+                    float x = sensorEvent.values[0];
+                    System.out.println("Valor giro " + x);
+                    if (x <= 4 && whip == 0) {
+                        whip++;
+                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
 
+                        CameraUpdateFactory.scrollBy(600, 300);
+                    } else if (x > 4 && whip == 1) {
+                        whip++;
+                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
 
+                        CameraUpdateFactory.scrollBy(-600, -300);
+                    }
+                }
+            }
 
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+
+            }
+        };
         binding.materialButton.setOnClickListener(view1 -> findPlaces(binding.textInputLayout.getEditText().getText().toString()));
         binding.textInputLayout.getEditText().setImeOptions(EditorInfo.IME_ACTION_SEARCH);
         binding.textInputLayout.getEditText().setOnEditorActionListener((textView, i, keyEvent) -> {
