@@ -45,7 +45,6 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
         mDatabase = FirebaseDatabase.getInstance();
 
         binding.btnRegistrarse.setOnClickListener(view -> doSignup());
-
     }
     @Override
     public void onClick(View view) {
