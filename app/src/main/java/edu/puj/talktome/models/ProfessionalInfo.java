@@ -9,14 +9,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInfo {
+public class ProfessionalInfo {
     private String name;
     //private long fechaNacimiento;
     private String tipoDocumento;
     private long numeroDocumento;
+    private String direccion;
     private long phoneNumber;
     private String email;
-    //private String pass2;
+
     //private long createdAt;
     //private long lastLogin;
 }

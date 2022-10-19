@@ -42,6 +42,8 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
         //Spinner android
         llenarSpinner();
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance();
+
         binding.btnRegistrarse.setOnClickListener(view -> doSignup());
 
     }
@@ -64,6 +66,7 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
     private void doSignup() {
         String email = Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString();
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
+        String pass2 = Objects.requireNonNull(binding.confirmaTextField.getEditText()).getText().toString();
 
         if (email.isEmpty()) {
             //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
@@ -72,34 +75,38 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
             return;
         }
 
-        if (pass.isEmpty()) {
+        if (pass.isEmpty() || pass2.isEmpty()) {
             //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
             binding.contrasenaTextField.setErrorEnabled(true);
             binding.contrasenaTextField.setError(getString(R.string.error_pass_label));
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnSuccessListener(authResult -> {
-                    DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(authResult.getUser().getUid()));
-                    UserInfo tmpUser = new UserInfo(
-                            Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
-                            binding.correoTextField.getEditText().getText().toString(),
-                            Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
-                            new Date().getTime(),
-                            new Date().getTime());
-                    reference.setValue(tmpUser).addOnSuccessListener(unused ->
-                            {
-                                Intent intent = new Intent(this, RegistroActivity.class);
-                                intent.putExtra("nombre",binding.nombreEditTextField.getText().toString());
-                                intent.putExtra("valor",getIntent().getStringExtra("valor"));
-                                startActivity(intent);
-                            })
-                            .addOnFailureListener(e ->
-                                    alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
-                })
-                .addOnFailureListener(e ->
-                        alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+        if (pass.equals(pass2)) {
+
+            mAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnSuccessListener(authResult -> {
+                        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(authResult.getUser().getUid()));
+                        UserInfo tmpUser = new UserInfo(
+                                Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
+                                Objects.requireNonNull(binding.tipoIdTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
+                                Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().idNumber().ssnValid() : binding.idTextField.getEditText().getText().toString()),
+                                Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
+                                binding.correoTextField.getEditText().getText().toString());
+                        reference.setValue(tmpUser).addOnSuccessListener(unused ->
+                                {
+                                    Intent intent = new Intent(STalkerActivity.this, HomeTalkerActivity.class);
+
+                                    startActivity(intent);
+                                })
+                                .addOnFailureListener(e ->
+                                        alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+                    })
+                    .addOnFailureListener(e ->
+                            alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+        } else {
+            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
+        }
     }
 
     private void llenarSpinner(){

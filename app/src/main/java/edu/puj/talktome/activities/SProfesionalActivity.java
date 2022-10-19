@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivitySprofesionalBinding;
 import edu.puj.talktome.models.DatabaseRoutes;
+import edu.puj.talktome.models.ProfessionalInfo;
 import edu.puj.talktome.models.UserInfo;
 import edu.puj.talktome.utils.AlertsHelper;
 
@@ -25,7 +26,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-public class SProfesionalActivity extends AppCompatActivity implements View.OnClickListener {
+public class SProfesionalActivity extends BasicActivity implements View.OnClickListener {
 
     private ActivitySprofesionalBinding binding;
     private int dia, mes, ano;
@@ -42,6 +43,7 @@ public class SProfesionalActivity extends AppCompatActivity implements View.OnCl
 
         //Calendario
         binding.creaTextView.setOnClickListener(this);
+
         //Spinner android
         llenarSpinner();
         mAuth = FirebaseAuth.getInstance();
@@ -70,6 +72,8 @@ public class SProfesionalActivity extends AppCompatActivity implements View.OnCl
     private void doSignup() {
         String email = Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString();
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
+        String pass2 = Objects.requireNonNull(binding.confirmaTextField.getEditText()).getText().toString();
+
 
         if (email.isEmpty()) {
             alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
@@ -85,34 +89,35 @@ public class SProfesionalActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnSuccessListener(authResult -> {
-                    DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(authResult.getUser().getUid()));
-                    UserInfo tmpUser = new UserInfo(
-                            Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
-                            binding.correoTextField.getEditText().getText().toString(),
-                            Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
-                            new Date().getTime(),
-                            new Date().getTime());
-                    reference.setValue(tmpUser).addOnSuccessListener(unused ->
-                            {
-                                Intent intent = new Intent(this,RegistroActivity.class);
-                                intent.putExtra("nombre",binding.nombreEditTextField.getText().toString());
-                                intent.putExtra("valor",getIntent().getStringExtra("valor"));
-                                startActivity(intent);
-                            })
-                            .addOnFailureListener(e ->
-                                    alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
-                })
-                .addOnFailureListener(e ->
-                        alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+        if (pass.equals(pass2)) {
+
+
+            mAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnSuccessListener(authResult -> {
+                        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(authResult.getUser().getUid()));
+                        ProfessionalInfo tmpUser = new ProfessionalInfo(
+                                Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
+                                Objects.requireNonNull(binding.tipoIdTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.tipoIdTextField.getEditText().getText().toString(),
+                                Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().idNumber().ssnValid() : binding.idTextField.getEditText().getText().toString()),
+                                Objects.requireNonNull(binding.ubTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().address().toString() : binding.ubTextField.getEditText().getText().toString(),
+                                Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
+                                binding.correoTextField.getEditText().getText().toString());
+                        reference.setValue(tmpUser).addOnSuccessListener(unused ->
+                                {
+                                    Intent intent = new Intent(SProfesionalActivity.this, HomeProfesionalActivity.class);
+
+                                    startActivity(intent);
+                                })
+                                .addOnFailureListener(e ->
+                                        alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+                    })
+                    .addOnFailureListener(e ->
+                            alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+        } else {
+            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
+        }
     }
-    /*private void registrarse(){
-        Intent intent = new Intent(this,RegistroActivity.class);
-        intent.putExtra("nombre",binding.nombreEditTextField.getText().toString());
-        intent.putExtra("valor",getIntent().getStringExtra("valor"));
-        startActivity(intent);
-    }*/
+
     private void llenarSpinner(){
         String [] campos = new String[]{getString(R.string.CC),getString(R.string.TI),getString(R.string.CE),getString(R.string.RC)};
 

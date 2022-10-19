@@ -90,6 +90,7 @@
     <string name="mis_certifications">Mis certificaciones</string>
     <string name="mis_peticiones">Mis peticiones</string>
     <string name="edad">Edad</string>
+    <string name="errorContrasena">Las contraseñas no coinciden, vuelva a intentarlo</string>
 
 
     <string name="snackBar_dismiss_label">cerrar</string>

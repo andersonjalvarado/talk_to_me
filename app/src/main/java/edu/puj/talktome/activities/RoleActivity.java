@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class RoleActivity extends AppCompatActivity {
+public class RoleActivity extends BasicActivity {
 
     public ActivityRoleBinding binding;
     @Override
@@ -25,13 +25,13 @@ public class RoleActivity extends AppCompatActivity {
         if (binding.radioPaciente.isChecked())
         {
             Intent intent = new Intent(this, STalkerActivity.class);
-            intent.putExtra("valor","1");
+            //intent.putExtra("valor","1");
             startActivity(intent);
         }
         else if (binding.radioProfesional.isChecked())
         {
             Intent intent = new Intent(this, SProfesionalActivity.class);
-            intent.putExtra("valor","0");
+            //intent.putExtra("valor","0");
             startActivity(intent);
         }
         else

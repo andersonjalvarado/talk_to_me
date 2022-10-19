@@ -36,7 +36,6 @@ public class LoginActivity extends BasicActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
 
-        //binding.btnInicioSesion.setOnClickListener(view -> startActivity(new Intent(this, HomeTalkerActivity.class)));
         binding.btnInicioSesion.setOnClickListener(view -> doLogin());
         binding.registrateTextView.setOnClickListener(view -> startActivity(new Intent(this, RoleActivity.class)));
 

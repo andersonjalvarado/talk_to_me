@@ -1,8 +1,11 @@
 package edu.puj.talktome.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -18,9 +21,12 @@ import edu.puj.talktome.databinding.ActivityAvailableProfessionalsBinding;
 import edu.puj.talktome.databinding.ActivityCertificatesBinding;
 import edu.puj.talktome.data.CertificatesFromJson;
 
-public class CertificatesActivity extends AppCompatActivity {
+public class CertificatesActivity extends BasicActivity {
 
     private ActivityCertificatesBinding binding;
+    private final int CAMERA_PERMISSION_ID = 101;
+    private final int GALLERY_PERMISSION_ID = 102;
+    String cameraPerm = Manifest.permission.CAMERA;
     private CertificatesFromJson certificatesFromJson  = new CertificatesFromJson();
 
     @Override
@@ -29,7 +35,10 @@ public class CertificatesActivity extends AppCompatActivity {
         binding = ActivityCertificatesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        try {
+        binding.AddCertificates.setOnClickListener(view -> {
+            startGallery(binding.getRoot());
+        });
+         /*try {
             certificatesFromJson.loadCertificatesByJson(getAssets().open(CertificatesFromJson.COUNTRIES_FILE));
             ArrayList<String> listaNombres = new ArrayList<>();
             for (int i = 0; i < certificatesFromJson.getCertificates().length(); i++) {
@@ -44,6 +53,12 @@ public class CertificatesActivity extends AppCompatActivity {
             binding.listaCertificados.setAdapter(adapter);
         } catch (JSONException | IOException e) {
             e.printStackTrace();
-        }
+        }*/
+    }
+
+    public void startGallery(View view){
+        Intent pickGalleryImage = new Intent(Intent.ACTION_PICK);
+        pickGalleryImage.setType("image/*");
+        startActivityForResult(pickGalleryImage, GALLERY_PERMISSION_ID);
     }
 }

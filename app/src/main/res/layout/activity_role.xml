@@ -22,7 +22,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="323dp"
         android:layout_height="260dp"
-        android:background="@color/white"
+        android:background="@drawable/border"
         android:orientation="vertical"
         android:transitionName="linearTrans"
         app:layout_constraintBottom_toBottomOf="parent"
