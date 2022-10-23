@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SProfesionalActivity"
-    android:background="@color/blue_bckgr2">
+    android:background="@color/blue_bckgr2"
+    tools:context=".activities.SProfesionalActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="Scroll"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="60dp"
-        android:background="@color/blue_bckgr2"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -94,7 +94,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="657dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="-90dp"
                 android:layout_marginRight="20dp"
@@ -103,40 +103,14 @@
                 android:padding="5dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/image_thumbnail"
+                    android:id="@+id/img_profesional"
                     android:layout_width="369dp"
                     android:layout_height="162dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:layout_gravity="center"
+                    android:src="@drawable/tony"
                     app:civ_border_color="@color/blue_letter"
                     app:civ_border_width="2dp" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/gallery_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Seleccionar foto"
-                        app:icon="@drawable/ic_baseline_image_24"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/camera_button"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/camera_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="tomar foto"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/gallery_button"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
                 <TextView
                     android:id="@+id/TextNNombre"
                     android:layout_width="334dp"
@@ -155,7 +129,7 @@
                     android:layout_width="334dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="Estiven Extreñido"
+                    android:text="Antonio Estrella"
                     android:textColor="@color/blue_letter"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -210,30 +184,6 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/TextEducacion"
-                    android:layout_width="334dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/Educacion"
-                    android:textColor="@color/blue_letter"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/textEdu"
-                    android:layout_width="334dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Pontificia Universidad Javeriana"
-                    android:textColor="@color/blue_letter"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
                     android:id="@+id/TextNCorreo"
                     android:layout_width="334dp"
                     android:layout_height="wrap_content"
@@ -251,7 +201,7 @@
                     android:layout_width="334dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="sstrange@gmail.com"
+                    android:text="ironman@gmail.com"
                     android:textColor="@color/blue_letter"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -272,7 +222,7 @@
 
                 <TextView
                     android:id="@+id/TextCelular"
-                    android:layout_width="wrap_content"
+                    android:layout_width="334dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="3125208584"
@@ -285,6 +235,9 @@
                     android:id="@+id/btn_inicioSesion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
                     android:backgroundTint="@color/blue_btn"
                     android:text="@string/boton_getionarPerfil"
                     android:textColor="@color/white"
@@ -295,53 +248,14 @@
         </LinearLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/containerMenu"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/btnPerfil"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/perfil"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnNotification"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/notificacion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-            app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnPerfilProfesional"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/lupa"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

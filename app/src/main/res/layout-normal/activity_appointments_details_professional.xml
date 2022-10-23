@@ -91,131 +91,131 @@
         app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
         app:layout_constraintBottom_toTopOf="@id/containerMenu">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
+        app:layout_constraintBottom_toTopOf="@+id/containerMenu"
+        android:padding="10dp"
+        app:circularflow_defaultRadius="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/talker_photo"
+            android:layout_width="130dp"
+            android:layout_height="131dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-            app:layout_constraintBottom_toTopOf="@+id/containerMenu"
-            android:padding="10dp"
-            app:circularflow_defaultRadius="10dp">
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/natasha"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/talker_photo"
-                android:layout_width="130dp"
-                android:layout_height="131dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/natasha"/>
+        <TextView
+            android:id="@+id/numero_cita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Número de cita: 245434"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintBottom_toTopOf="@+id/nombre_talker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/talker_photo" />
 
-            <TextView
-                android:id="@+id/numero_cita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Número de cita: 245434"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintBottom_toTopOf="@+id/nombre_talker"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/talker_photo" />
+        <TextView
+            android:id="@+id/nombre_talker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Talker: Natasha Romanoff"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numero_cita" />
 
-            <TextView
-                android:id="@+id/nombre_talker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Talker: Natasha Romanoff"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/numero_cita" />
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Fecha: 31/08/2022"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_talker" />
 
-            <TextView
-                android:id="@+id/fecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Fecha: 31/08/2022"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombre_talker" />
+        <TextView
+            android:id="@+id/hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Hora: 6:00 P.M."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fecha" />
 
-            <TextView
-                android:id="@+id/hora"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Hora: 6:00 P.M."
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fecha" />
+        <TextView
+            android:id="@+id/costo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Costo: $15.000"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hora" />
 
-            <TextView
-                android:id="@+id/costo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Costo: $15.000"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hora" />
+        <TextView
+            android:id="@+id/modalidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Modalidad: Virtual"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/costo" />
 
-            <TextView
-                android:id="@+id/modalidad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Modalidad: Virtual"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/costo" />
+        <TextView
+            android:id="@+id/direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Dirección: Cll. 106 # 17 - 8"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:transitionName="textTrans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modalidad" />
 
-            <TextView
-                android:id="@+id/direccion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Dirección: Cll. 106 # 17 - 8"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:transitionName="textTrans"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/modalidad" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_editCita"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/blue_btn"
+            android:text="@string/boton_getionarCita"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_editCita"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/blue_btn"
-                android:text="@string/boton_getionarCita"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:cornerRadius="15dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/direccion" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 

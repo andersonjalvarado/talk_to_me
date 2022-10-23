@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AppointmentsDetailsProfessional"
+    tools:context=".activities.ManageAppointmentsDetailsProfessional"
     android:background="@color/blue_bckgr2"
     android:padding="15dp">
 
@@ -67,9 +67,9 @@
             android:layout_width="78dp"
             android:layout_height="68dp"
             android:src="@drawable/citas"
-            android:alpha="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0.5"
             app:layout_constraintStart_toEndOf="@+id/titleAppP"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,9 +79,9 @@
 
     <ScrollView
         android:id="@+id/containerMedio"
-        android:layout_below="@id/containerSuperior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/containerSuperior"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="60dp"
         android:background="@color/blue_bckgr2"
@@ -102,28 +102,17 @@
             android:padding="10dp"
             app:circularflow_defaultRadius="10dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/talker_photo"
-                android:layout_width="130dp"
-                android:layout_height="131dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/natasha"/>
-
             <TextView
                 android:id="@+id/numero_cita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="Número de cita: 245434"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:transitionName="textTrans"
                 app:layout_constraintBottom_toTopOf="@+id/nombre_talker"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/talker_photo" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/nombre_talker"
@@ -145,6 +134,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Fecha: 31/08/2022"
                 android:textColor="@color/black"
+                android:background="@color/blue_bckgr2"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:transitionName="textTrans"
@@ -157,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Hora: 6:00 P.M."
+                android:background="@color/blue_bckgr2"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -204,16 +195,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/modalidad" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_editCita"
+                android:id="@+id/btn_reprogramar_cita"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/blue_btn"
-                android:text="@string/boton_getionarCita"
+                android:text="@string/boton_reprogramar_cita"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:cornerRadius="15dp"
+                app:cornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/direccion" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancelar_cita"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/blue_btn"
+                android:text="@string/boton_cancelar_cita"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_reprogramar_cita" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -224,9 +228,9 @@
         android:id="@+id/containerMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/white"
 
         android:padding="5dp"

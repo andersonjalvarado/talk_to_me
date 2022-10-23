@@ -13,7 +13,7 @@
         android:id="@+id/containerGeneral"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="60dp"
         android:background="@color/blue_bckgr2"
         android:contentDescription="@string/scroll"
         app:layout_constraintBottom_toBottomOf="parent"

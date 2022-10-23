@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,9 +20,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
+        android:layout_below="@id/imageView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:padding="12dp"
         android:orientation="vertical"
         android:transitionName="linearTrans"
@@ -116,22 +119,22 @@
         android:id="@+id/nuevoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="-2dp"
         android:layout_gravity="center"
         android:text="¿Nuevo en Talk to Me?"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textStyle="bold"
         android:textSize="16dp"
+        android:textStyle="bold"
         android:transitionName="textTrans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        />
 
     <TextView
         android:id="@+id/registrateTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/nuevoTextView"
         android:layout_gravity="center"
         android:text="@string/Registrarse"
         android:textAlignment="center"
@@ -148,6 +151,7 @@
         android:id="@+id/recContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/registrateTextView"
         android:layout_gravity="center"
         android:text="@string/RecContrasena"
         android:textAlignment="center"
@@ -160,4 +164,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrateTextView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

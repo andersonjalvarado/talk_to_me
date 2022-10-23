@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AvailableProfessionalsActivity"
+    tools:context=".activities.HistoryActivity"
     android:background="@color/blue_bckgr2"
     android:padding="15dp"
     android:orientation="vertical">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerSuperior"
@@ -18,13 +17,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conteinerInformation"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pincipalLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
 
@@ -32,10 +35,10 @@
                 android:id="@+id/principalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/titulo_profesionales"
-                android:textAlignment="center"
+                android:text="@string/titulo_history"
+                android:textAlignment="textStart"
                 android:textColor="@color/white"
-                android:textSize="32sp"
+                android:textSize="34sp"
                 android:textStyle="bold"
                 android:transitionName="textTrans"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,13 +46,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_width="250dp"
+
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/informacion_profesionales"
+                android:text="@string/informacion_history"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:transitionName="textTrans"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -64,8 +68,7 @@
             android:id="@+id/pincipalLogo"
             android:layout_width="78dp"
             android:layout_height="68dp"
-            android:src="@drawable/perfil"
-            android:alpha="0.5"
+            android:src="@drawable/historia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/conteinerInformation"
@@ -73,46 +76,39 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <ScrollView
-        android:id="@+id/containerMedio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/containerSuperior"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:background="@color/blue_bckgr2"
-        android:contentDescription="@string/scroll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-        app:layout_constraintBottom_toTopOf="@id/containerMenu">
-
-
+        android:layout_marginBottom="60dp">
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerMedio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/containerSuperior"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
             android:background="@color/white"
+            android:padding="10dp"
+            app:circularflow_defaultRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/containerMenu"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-            app:layout_constraintBottom_toTopOf="@+id/containerMenu"
-            android:padding="10dp"
-            app:circularflow_defaultRadius="10dp">
+            app:layout_constraintVertical_bias="1.0">
 
 
             <LinearLayout
                 android:id="@+id/profesional_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/profesional_2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:onClick="onClick"
-
-                app:layout_constraintStart_toStartOf="parent"
                 android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintBottom_toTopOf="@+id/profesional_2"
+                app:layout_constraintCircleRadius="34234dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -122,38 +118,38 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/logoProfessional1"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
-                        tools:src="@tools:sample/avatars"
                         app:layout_constraintBottom_toBottomOf="parent"
-
                         app:layout_constraintEnd_toStartOf="@+id/layout_doctor1"
+
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
 
                     <LinearLayout
                         android:id="@+id/layout_doctor1"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
+                            android:text="@string/informacion_history_por"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
                             app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -164,24 +160,166 @@
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layout_diagnostico1"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor1"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor1">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Especialidad: "
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic_description"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha1"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_date_description"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profesional_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logoProfessional2"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor2"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor2"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico2"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -200,152 +338,8 @@
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout_fecha1"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico1"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Modalidad: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="parent"
-
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Virtual"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
                             app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/profesional_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:onClick="onClick"
-
-                app:layout_constraintTop_toBottomOf="@+id/profesional_1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/logoProfessional2"
-                        android:layout_width="78dp"
-                        android:layout_height="68dp"
-
-                        tools:src="@tools:sample/avatars"
-                        app:layout_constraintBottom_toBottomOf="parent"
-
-                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:id="@+id/layout_doctor2"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Realizado por: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Carlos Gutierrez"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout_diagnostico2"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor2"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Especialidad: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="parent"
-
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Psicología"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
@@ -354,14 +348,14 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico2"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico2">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Modalidad: "
+                            android:text="@string/fecha_cita"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -374,14 +368,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Virtual"
+                            android:text="21/06/2022"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -394,13 +388,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:onClick="onClick"
-
-                app:layout_constraintTop_toBottomOf="@+id/profesional_2"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintTop_toBottomOf="@+id/profesional_2">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -409,39 +401,39 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/logoProfessional3"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
 
-                        tools:src="@tools:sample/avatars"
                         app:layout_constraintBottom_toBottomOf="parent"
-
                         app:layout_constraintEnd_toStartOf="@+id/layout_doctor3"
+
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
 
                     <LinearLayout
                         android:id="@+id/layout_doctor3"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
+                            android:text="@string/informacion_history_por"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
                             app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -452,24 +444,24 @@
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layout_diagnostico3"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor3"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor3">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Especialidad: "
+                            android:text="@string/informacion_history_diagnostic"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -482,14 +474,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Psiquiatría"
+                            android:text="Depresión post traumática"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
@@ -498,14 +490,14 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico3"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico3">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Modalidad: "
+                            android:text="@string/fecha_cita"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -518,14 +510,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Presencial"
+                            android:text="21/06/2022"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -538,13 +530,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/profesional_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:onClick="onClick"
-
-                app:layout_constraintStart_toStartOf="parent"
                 android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintCircleRadius="34234dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_3">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -553,39 +543,39 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/logoProfessional4"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
 
-                        tools:src="@tools:sample/avatars"
                         app:layout_constraintBottom_toBottomOf="parent"
-
                         app:layout_constraintEnd_toStartOf="@+id/layout_doctor4"
+
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
 
                     <LinearLayout
                         android:id="@+id/layout_doctor4"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
+                            android:text="@string/informacion_history_por"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
                             app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -596,24 +586,24 @@
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layout_diagnostico4"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor4"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor4">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Especialidad: "
+                            android:text="@string/informacion_history_diagnostic"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -626,14 +616,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Psicología del deporte"
+                            android:text="Depresión post traumática"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
@@ -642,14 +632,14 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico4"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico4">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Modalidad: "
+                            android:text="@string/fecha_cita"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -662,14 +652,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Presencial"
+                            android:text="21/06/2022"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -682,13 +672,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:onClick="onClick"
-
-                app:layout_constraintTop_toBottomOf="@+id/profesional_4"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintTop_toBottomOf="@+id/profesional_4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -697,39 +685,39 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/logoProfessional5"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
 
-                        tools:src="@tools:sample/avatars"
                         app:layout_constraintBottom_toBottomOf="parent"
-
                         app:layout_constraintEnd_toStartOf="@+id/layout_doctor5"
+
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
 
                     <LinearLayout
                         android:id="@+id/layout_doctor5"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
+                            android:text="@string/informacion_history_por"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
                             app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -740,24 +728,24 @@
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layout_diagnostico5"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor5"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor5">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Especialidad: "
+                            android:text="@string/informacion_history_diagnostic"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -770,14 +758,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Psicología clinica"
+                            android:text="Depresión post traumática"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
@@ -786,14 +774,14 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico5"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico5">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Modalidad: "
+                            android:text="@string/fecha_cita"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -806,14 +794,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Virtual"
+                            android:text="21/06/2022"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -826,13 +814,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:onClick="onClick"
-
-                app:layout_constraintTop_toBottomOf="@+id/profesional_5"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintTop_toBottomOf="@+id/profesional_5">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -841,39 +827,39 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/logoProfessional6"
                         android:layout_width="78dp"
                         android:layout_height="68dp"
 
-                        tools:src="@tools:sample/avatars"
                         app:layout_constraintBottom_toBottomOf="parent"
-
                         app:layout_constraintEnd_toStartOf="@+id/layout_doctor6"
+
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
 
                     <LinearLayout
                         android:id="@+id/layout_doctor6"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
+                            android:text="@string/informacion_history_por"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
                             app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -884,24 +870,24 @@
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/layout_diagnostico6"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor6"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor6">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Especilidad: "
+                            android:text="@string/informacion_history_diagnostic"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -914,14 +900,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Psiquiatría infantil"
+                            android:text="Depresión post traumática"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
 
@@ -930,122 +916,14 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico6"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Modalidad: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="parent"
-
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Presencial"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/profesional_7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:onClick="onClick"
-
-                app:layout_constraintTop_toBottomOf="@+id/profesional_6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintCircleRadius="34234dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/logoProfessional7"
-                        android:layout_width="78dp"
-                        android:layout_height="68dp"
-
-                        tools:src="@tools:sample/avatars"
-                        app:layout_constraintBottom_toBottomOf="parent"
-
-                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor7"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:id="@+id/layout_doctor7"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional7"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="10dp">
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico6">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Realizado por: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Carlos Gutierrez"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout_diagnostico7"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor7"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional7"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Especialidad: "
+                            android:text="@string/fecha_cita"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
@@ -1058,67 +936,34 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ansiedad"
+                            android:text="21/06/2022"
                             android:textColor="@color/black"
                             android:textSize="13sp"
                             android:textStyle="bold"
                             android:transitionName="textTrans"
 
-                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout_fecha7"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico7"
-                        app:layout_constraintStart_toEndOf="@+id/logoProfessional7"
-                        app:layout_constraintEnd_toEndOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Modalidad: "
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
-                            app:layout_constraintStart_toEndOf="parent"
-
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Virtual"
-                            android:textColor="@color/black"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            android:transitionName="textTrans"
-
                             app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+        
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:background="@color/white"
-        android:padding="5dp"
 
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -1160,7 +1005,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </RelativeLayout>

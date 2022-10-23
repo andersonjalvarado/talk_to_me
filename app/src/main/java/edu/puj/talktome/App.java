@@ -2,6 +2,7 @@ package edu.puj.talktome;
 
 import android.app.Application;
 
+import dagger.Component;
 import edu.puj.talktome.dependencies.components.ApplicationComponent;
 import edu.puj.talktome.dependencies.components.DaggerApplicationComponent;
 import edu.puj.talktome.dependencies.modules.GeoInfoModule;

@@ -48,15 +48,15 @@ public class MainActivity extends LoginActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
                 Pair[] pairs = new Pair[2];
-                pairs[0] = new Pair<View, String>(binding.logo,"imgTrans");
-                pairs[1] = new Pair<View, String>(binding.nombre,"linearTrans");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
+                pairs[0] = new Pair<View, String>(binding.logo, "imgTrans");
+                pairs[1] = new Pair<View, String>(binding.nombre, "linearTrans");
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
                 startActivity(intent, options.toBundle());
                 finish();
             }
-        },3500);
+        }, 3500);
     }
 }
