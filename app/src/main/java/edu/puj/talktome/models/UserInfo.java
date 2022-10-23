@@ -16,6 +16,7 @@ public class UserInfo {
     private long numeroDocumento;
     private long phoneNumber;
     private String email;
+    private String role;
     //private String pass2;
     //private long createdAt;
     //private long lastLogin;

@@ -17,6 +17,7 @@ public class ProfessionalInfo {
     private String direccion;
     private long phoneNumber;
     private String email;
+    private String role;
 
     //private long createdAt;
     //private long lastLogin;

@@ -73,6 +73,7 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
         String email = Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString();
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
         String pass2 = Objects.requireNonNull(binding.confirmaTextField.getEditText()).getText().toString();
+        String rol = "profesional";
 
 
         if (email.isEmpty()) {
@@ -101,7 +102,8 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                                 Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().idNumber().ssnValid() : binding.idTextField.getEditText().getText().toString()),
                                 Objects.requireNonNull(binding.ubTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().address().toString() : binding.ubTextField.getEditText().getText().toString(),
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
-                                binding.correoTextField.getEditText().getText().toString());
+                                binding.correoTextField.getEditText().getText().toString(),
+                                rol);
                         reference.setValue(tmpUser).addOnSuccessListener(unused ->
                                 {
                                     Intent intent = new Intent(SProfesionalActivity.this, HomeProfesionalActivity.class);

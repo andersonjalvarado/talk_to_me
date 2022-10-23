@@ -66,6 +66,7 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
         String email = Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString();
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
         String pass2 = Objects.requireNonNull(binding.confirmaTextField.getEditText()).getText().toString();
+        String rol = "talker";
 
         if (email.isEmpty()) {
             //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
@@ -91,7 +92,8 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
                                 Objects.requireNonNull(binding.tipoIdTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
                                 Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().idNumber().ssnValid() : binding.idTextField.getEditText().getText().toString()),
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
-                                binding.correoTextField.getEditText().getText().toString());
+                                binding.correoTextField.getEditText().getText().toString(),
+                                rol);
                         reference.setValue(tmpUser).addOnSuccessListener(unused ->
                                 {
                                     Intent intent = new Intent(STalkerActivity.this, HomeTalkerActivity.class);
