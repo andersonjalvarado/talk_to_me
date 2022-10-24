@@ -4,6 +4,7 @@ import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivityStalkerBinding;
 import edu.puj.talktome.models.DatabaseRoutes;
 import edu.puj.talktome.models.UserInfo;
+import edu.puj.talktome.utils.AlertUtils;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.github.javafaker.Faker;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +29,7 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
     private ActivityStalkerBinding binding;
     private int dia, mes, ano;
 
+    private AlertUtils alertUtils;
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase;
 
@@ -69,17 +72,27 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
         String rol = "talker";
 
         if (email.isEmpty()) {
-            //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
             binding.correoTextField.setErrorEnabled(true);
             binding.correoTextField.setError(getString(R.string.mail_error_label));
             return;
+        }else{
+            if(!email.matches("[a-zA-Z]+@[a-zA-Z]+(\\.[a-zA-Z]+)+")){
+                alertUtils.shortSimpleSnackbar(binding.getRoot(),"Digita un correo válido");
+                return;
+            }
         }
 
         if (pass.isEmpty() || pass2.isEmpty()) {
-            //alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
             binding.contrasenaTextField.setErrorEnabled(true);
             binding.contrasenaTextField.setError(getString(R.string.error_pass_label));
             return;
+        }else{
+            if(pass.length() < 6){
+                alertUtils.shortSimpleSnackbar(binding.getRoot(),"La contraseña de ser mayor a 6 caracteres");
+                return;
+            }
         }
 
         if (pass.equals(pass2)) {
@@ -104,9 +117,9 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
                                         alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
                     })
                     .addOnFailureListener(e ->
-                            alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+                            alertUtils.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
         } else {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
         }
     }
 

@@ -59,6 +59,7 @@ public class LoginActivity extends BasicActivity {
             }
         });
         binding.btnInicioSesion.setOnClickListener(view -> doLogin());
+        binding.recContrasena.setOnClickListener(view -> doPassReset());
         binding.registrateTextView.setOnClickListener(view -> startActivity(new Intent(this, RoleActivity.class)));
 
     }

@@ -1,13 +1,10 @@
 package edu.puj.talktome.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivitySprofesionalBinding;
 import edu.puj.talktome.models.DatabaseRoutes;
 import edu.puj.talktome.models.ProfessionalInfo;
-import edu.puj.talktome.models.UserInfo;
-import edu.puj.talktome.utils.AlertsHelper;
+import edu.puj.talktome.utils.AlertUtils;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -16,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.github.javafaker.Faker;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +21,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
 
 public class SProfesionalActivity extends BasicActivity implements View.OnClickListener {
@@ -31,7 +28,7 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
     private ActivitySprofesionalBinding binding;
     private int dia, mes, ano;
 
-    private AlertsHelper alertsHelper;
+    private AlertUtils alertUtils;
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase;
 
@@ -77,17 +74,27 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
 
 
         if (email.isEmpty()) {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
             binding.correoTextField.setErrorEnabled(true);
             binding.correoTextField.setError(getString(R.string.mail_error_label));
             return;
+        }else{
+            if(!email.matches("[a-zA-Z]+@[a-zA-Z]+(\\.[a-zA-Z]+)+")){
+                alertUtils.shortSimpleSnackbar(binding.getRoot(),"Digita un correo válido");
+                return;
+            }
         }
 
         if (pass.isEmpty()) {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.error_pass_label));
             binding.contrasenaTextField.setErrorEnabled(true);
             binding.contrasenaTextField.setError(getString(R.string.error_pass_label));
             return;
+        }else{
+            if(pass.length() < 6){
+                alertUtils.shortSimpleSnackbar(binding.getRoot(),"La contraseña de ser mayor a 6 caracteres");
+                return;
+            }
         }
 
         if (pass.equals(pass2)) {
@@ -99,8 +106,8 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                         ProfessionalInfo tmpUser = new ProfessionalInfo(
                                 Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
                                 Objects.requireNonNull(binding.tipoIdTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.tipoIdTextField.getEditText().getText().toString(),
-                                Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().idNumber().ssnValid() : binding.idTextField.getEditText().getText().toString()),
-                                Objects.requireNonNull(binding.ubTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().address().toString() : binding.ubTextField.getEditText().getText().toString(),
+                                Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.idTextField.getEditText().getText().toString()),
+                                Objects.requireNonNull(binding.ubTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.ubTextField.getEditText().getText().toString(),
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
                                 binding.correoTextField.getEditText().getText().toString(),
                                 rol);
@@ -111,12 +118,12 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                                     startActivity(intent);
                                 })
                                 .addOnFailureListener(e ->
-                                        alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+                                        alertUtils.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
                     })
                     .addOnFailureListener(e ->
-                            alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+                            alertUtils.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
         } else {
-            alertsHelper.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.errorContrasena));
         }
     }
 

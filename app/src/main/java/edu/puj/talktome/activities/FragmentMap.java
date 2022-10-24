@@ -69,6 +69,7 @@ public class FragmentMap extends Fragment {
 
     ActivityFragmentMapBinding binding;
 
+    AlertUtils alertUtils;
     //Map interaction variables
     GoogleMap googleMap;
     static final int INITIAL_ZOOM_LEVEL = 18;
@@ -167,14 +168,29 @@ public class FragmentMap extends Fragment {
         acelerometroSensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                if (googleMap != null) {
-
-                    if (sensorEvent.values[0] < ACELEROMETROX){
-                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
-                    } else if(sensorEvent.values[0] > ACELEROMETROX ) {
-                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_night_style));
+                if(sensorEvent.values[0]>-4 && whip==0){
+                    whip++;
+                    alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato1));
+                }else{
+                    if(sensorEvent.values[0]>4 && whip==1) {
+                        whip++;
+                        alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato2));
                     }
                 }
+                if(whip==2){
+                    alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.enssayo3));
+                    whip=0;
+                }
+                /*if (googleMap != null) {
+
+                    if (sensorEvent.values[0] < ACELEROMETROX){
+                        alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato1));
+                        //googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
+                    } else if(sensorEvent.values[0] > ACELEROMETROX ) {
+                        alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato2));
+                        //googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_night_style));
+                    }
+                }*/
             }
 
             @Override
@@ -182,8 +198,6 @@ public class FragmentMap extends Fragment {
 
             }
         };
-
-
 
         binding.materialButton.setOnClickListener(view1 -> findPlaces(binding.textInputLayout.getEditText().getText().toString()));
         binding.textInputLayout.getEditText().setImeOptions(EditorInfo.IME_ACTION_SEARCH);
@@ -273,6 +287,7 @@ public class FragmentMap extends Fragment {
             e.printStackTrace();
         }
     }
+
     private void trazarRuta(JSONObject json) {
         JSONArray routes;
         JSONArray legs;
@@ -319,5 +334,4 @@ public class FragmentMap extends Fragment {
             e.printStackTrace();
         }
     }
-
 }
