@@ -1,6 +1,7 @@
 package edu.puj.talktome.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.puj.talktome.R;
@@ -15,10 +16,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import edu.puj.talktome.models.UserInfo;
@@ -33,8 +38,15 @@ public class LoginActivity extends BasicActivity {
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase;
     private DatabaseReference reference;
+    ValueEventListener listener;
 
+    private List<String> names = new ArrayList<>();
+    private List<String> uuids = new ArrayList<>();
+    ArrayAdapter adapter;
+
+    String uid;
     private String rol;
+    String auxUuid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +56,32 @@ public class LoginActivity extends BasicActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
-        reference = mDatabase.getReference(DatabaseRoutes.getUser(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()));
+        //reference = mDatabase.getReference(DatabaseRoutes.getUser(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()));
+        reference = mDatabase.getReference(DatabaseRoutes.USERS_PATH);
 
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        listener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserInfo tmpUser= snapshot.getValue(UserInfo.class);
-                rol = tmpUser.getRole();
+                snapshot.getChildren().forEach(dataSnapshot -> {
+                    UserInfo tmpUser = dataSnapshot.getValue(UserInfo.class);
+                    String uuid = dataSnapshot.getRef().getKey();
+                    Log.e(TAG,"Uiid"+uuid);
+                    if(!uuids.contains(uuid)){
+                        names.add(tmpUser.getEmail());
+                        uuids.add(uuid);
+                    }
+                        });
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e(TAG, "onCancelled: ", error.toException());
             }
-        });
+        };
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, names);
+
         binding.btnInicioSesion.setOnClickListener(view -> doLogin());
         binding.recContrasena.setOnClickListener(view -> doPassReset());
         binding.registrateTextView.setOnClickListener(view -> startActivity(new Intent(this, RoleActivity.class)));
@@ -88,10 +112,17 @@ public class LoginActivity extends BasicActivity {
 
         mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnSuccessListener(authResult -> {
-                    if(rol.equals("talker"))
-                    startActivity(new Intent(LoginActivity.this, HomeTalkerActivity.class));
-                    if(rol.equals("profesional"))
-                        startActivity(new Intent(LoginActivity.this, HomeProfesionalActivity.class));
+                    //if(rol.equals("talker"))
+                    //startActivity(new Intent(LoginActivity.this, HomeTalkerActivity.class));
+                    //if(rol.equals("profesional"))
+                        //startActivity(new Intent(LoginActivity.this, RegistroActivity.class));
+                    if(names.contains(binding.correoTextField.getEditText().getText().toString())){
+                        Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
+                        auxUuid = String.valueOf(uuids.get(names.indexOf(binding.correoTextField.getEditText().getText().toString())));
+                        //auxUuid="uoQgS7aynGtbccoUNwh78iuqeUd73";
+                        intent.putExtra("uuid",auxUuid);
+                        startActivity(intent);
+                    }
                 })
                 .addOnFailureListener(e ->
                         alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
@@ -111,5 +142,16 @@ public class LoginActivity extends BasicActivity {
                         alertsHelper.shortSimpleSnackbar(binding.getRoot(),"Revise su correo."))
                 .addOnFailureListener(e ->
                         alertsHelper.shortSimpleSnackbar(binding.getRoot(), e.getLocalizedMessage()));
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        reference.addValueEventListener(listener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        reference.removeEventListener(listener);
     }
 }
