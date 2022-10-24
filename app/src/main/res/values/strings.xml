@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Talk To Me</string>
-    <string name="ensato1">Rotacion 1</string>
-    <string name="ensato2">Rotacion 2</string>
+    <string name="rDerecha">Rotacion Derecha</string>
+    <string name="rIzquierda">Rotacion Izquierda</string>
+    <string name="notsensor">No cuenta con acelerometro</string>
     <string name="enssayo3">No se que putas haga</string>
     <string name="Bienvenido">Bienvenid@ a</string>
     <string name="Rol">Escoge tu rol en</string>

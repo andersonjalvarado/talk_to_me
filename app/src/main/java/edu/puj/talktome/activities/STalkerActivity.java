@@ -77,7 +77,8 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
             binding.correoTextField.setError(getString(R.string.mail_error_label));
             return;
         }else{
-            if(!email.matches("[a-zA-Z]+@[a-zA-Z]+(\\.[a-zA-Z]+)+")){
+            if(!email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
                 alertUtils.shortSimpleSnackbar(binding.getRoot(),"Digita un correo válido");
                 return;
             }

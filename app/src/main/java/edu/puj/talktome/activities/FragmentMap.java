@@ -81,6 +81,7 @@ public class FragmentMap extends Fragment {
     final static float LIGHT_LIMIT = 2000.0f;
     final static int ACELEROMETROX = 1;
     int whip = 0;
+
     SensorManager sensorManager;
     Sensor lightSensor, acelerometroSensor;
     SensorEventListener lightSensorEventListener, acelerometroSensorEventListener;
@@ -165,21 +166,30 @@ public class FragmentMap extends Fragment {
 
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         acelerometroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        if(acelerometroSensor==null)
+            alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.notsensor));
+
         acelerometroSensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                if(sensorEvent.values[0]>-4 && whip==0){
-                    whip++;
-                    alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato1));
-                }else{
-                    if(sensorEvent.values[0]>4 && whip==1) {
+                if (googleMap != null) {
+                    if (sensorEvent.values[0] < -5 && whip == 0) {
                         whip++;
-                        alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.ensato2));
+                        alertUtils.shortSimpleSnackbar(binding.getRoot(), getActivity().getString(R.string.rDerecha));
+                        //googleMap.setMapType(googleMap.MAP_TYPE_TERRAIN);
+                    } else {
+                        if (sensorEvent.values[0] > 5 && whip == 1) {
+                            whip++;
+                            alertUtils.shortSimpleSnackbar(binding.getRoot(), getActivity().getString(R.string.rIzquierda));
+                            //googleMap.setMapType(googleMap.MAP_TYPE_SATELLITE);
+                        }
                     }
-                }
-                if(whip==2){
-                    alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.enssayo3));
-                    whip=0;
+                    if (whip == 2) {
+                        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_day_style));
+                        whip = 0;
+                        //alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.enssayo3));
+                    }
                 }
                 /*if (googleMap != null) {
 
@@ -192,12 +202,13 @@ public class FragmentMap extends Fragment {
                     }
                 }*/
             }
-
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
 
             }
         };
+
+        sensorManager.registerListener(acelerometroSensorEventListener,acelerometroSensor,SensorManager.SENSOR_DELAY_NORMAL);
 
         binding.materialButton.setOnClickListener(view1 -> findPlaces(binding.textInputLayout.getEditText().getText().toString()));
         binding.textInputLayout.getEditText().setImeOptions(EditorInfo.IME_ACTION_SEARCH);
@@ -213,7 +224,7 @@ public class FragmentMap extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        sensorManager.registerListener(lightSensorEventListener, lightSensor, SensorManager.SENSOR_DELAY_UI);
+        sensorManager.registerListener(lightSensorEventListener, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override

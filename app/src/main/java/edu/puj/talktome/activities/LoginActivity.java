@@ -44,7 +44,7 @@ public class LoginActivity extends BasicActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
-        reference = mDatabase.getReference(DatabaseRoutes.getUser(mAuth.getCurrentUser().getUid()));
+        reference = mDatabase.getReference(DatabaseRoutes.getUser(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()));
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
