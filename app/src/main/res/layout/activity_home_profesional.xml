@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HomeProfesionalActivity"
     android:background="@color/blue_bckgr2"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/containerGeneral"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         android:background="@color/blue_bckgr2"
         android:contentDescription="@string/scroll"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +68,7 @@
                 android:background="@color/blue_bckgr3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="1dp"
                 app:layout_constraintTop_toBottomOf="@+id/hola_usuario"
                 android:padding="10dp">
 
@@ -130,10 +132,11 @@
                 android:id="@+id/containerMedio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
                 android:padding="10dp">
 
@@ -253,61 +256,57 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/containerMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/containerMedio"
-                app:layout_constraintVertical_bias="1"
-
-                android:layout_marginTop="15dp"
-                android:padding="5dp">
-
-                <ImageButton
-                    android:id="@+id/btnListaPacientes"
-                    android:layout_width="45dp"
-                    android:layout_height="28dp"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/lupa"
-                    android:adjustViewBounds="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <ImageButton
-                    android:id="@+id/btnNotification"
-                    android:layout_width="45dp"
-                    android:layout_height="28dp"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/notificacion"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-                    app:layout_constraintStart_toEndOf="@+id/btnListaPacientes"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageButton
-                    android:id="@+id/btnPerfil"
-                    android:layout_width="45dp"
-                    android:layout_height="28dp"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/perfil"
-                    android:adjustViewBounds="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:padding="5dp"
+        tools:layout_editor_absoluteY="603dp">
+
+        <ImageButton
+            android:id="@+id/btnListaPacientes"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lupa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/btnNotification"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/notificacion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
+            app:layout_constraintStart_toEndOf="@+id/btnListaPacientes"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPerfil"
+            android:layout_width="45dp"
+            android:layout_height="28dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

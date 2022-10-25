@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HistoryActivity"
     android:background="@color/blue_bckgr2"
-    android:padding="15dp">
+    android:padding="15dp"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerSuperior"
@@ -75,897 +76,906 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/containerMedio"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/white"
-        android:padding="10dp"
-        app:circularflow_defaultRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/containerMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-        app:layout_constraintVertical_bias="1.0">
-
-
-        <LinearLayout
-            android:id="@+id/profesional_1"
+        android:layout_below="@id/containerSuperior"
+        android:layout_marginBottom="60dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerMedio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/profesional_2"
-            app:layout_constraintCircleRadius="34234dp"
+            android:layout_below="@id/containerSuperior"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:circularflow_defaultRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/containerMenu"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
+            app:layout_constraintVertical_bias="1.0">
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/profesional_2"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/logoProfessional1"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor1"
 
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor1"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional1"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor1"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor1"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico1"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico1"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic_description"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor1">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha1"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic_description"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha1"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_date_description"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional1"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_date_description"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profesional_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintCircleRadius="34234dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profesional_1">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_1">
 
-                <ImageView
-                    android:id="@+id/logoProfessional2"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor2"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor2"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional2"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor2"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor2"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico2"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico2"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Depresión post traumática"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor2">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha2"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depresión post traumática"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha2"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="21/06/2022"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional2"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profesional_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintCircleRadius="34234dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profesional_2">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_2">
 
-                <ImageView
-                    android:id="@+id/logoProfessional3"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor3"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor3"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional3"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor3"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor3"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico3"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor3">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico3"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Depresión post traumática"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor3">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha3"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico3">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depresión post traumática"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha3"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="21/06/2022"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional3"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico3">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profesional_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintCircleRadius="34234dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profesional_3">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_3">
 
-                <ImageView
-                    android:id="@+id/logoProfessional4"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor4"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor4"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional4"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor4"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor4"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico4"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor4">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico4"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Depresión post traumática"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor4">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha4"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico4">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depresión post traumática"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha4"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="21/06/2022"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional4"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profesional_5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintCircleRadius="34234dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profesional_4">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_4">
 
-                <ImageView
-                    android:id="@+id/logoProfessional5"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor5"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor5"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional5"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor5"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor5"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico5"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor5">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico5"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Depresión post traumática"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor5">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha5"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico5">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depresión post traumática"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha5"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="21/06/2022"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional5"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/profesional_6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintCircleRadius="34234dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profesional_5">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/profesional_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profesional_5">
 
-                <ImageView
-                    android:id="@+id/logoProfessional6"
-                    android:layout_width="78dp"
-                    android:layout_height="68dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/layout_doctor6"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:id="@+id/layout_doctor6"
-                    android:layout_width="240dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
+                    android:background="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_por"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-                        app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/logoProfessional6"
+                        android:layout_width="78dp"
+                        android:layout_height="68dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_doctor6"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_doctor6"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Carlos Gutierrez"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:id="@+id/layout_diagnostico6"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_doctor6">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_por"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintStart_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layout_informacion"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Carlos Gutierrez"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_diagnostico6"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/informacion_history_diagnostic"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Depresión post traumática"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_doctor6">
 
-                <LinearLayout
-                    android:id="@+id/layout_fecha6"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico6">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/informacion_history_diagnostic"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depresión post traumática"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fecha6"
+                        android:layout_width="240dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_cita"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
-                        app:layout_constraintStart_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="21/06/2022"
-                        android:textColor="@color/black"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:transitionName="textTrans"
-
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintStart_toEndOf="@+id/logoProfessional6"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_diagnostico6">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fecha_cita"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintStart_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:transitionName="textTrans"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/realizado_por"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
 
-        android:layout_marginTop="15dp"
-        android:padding="5dp">
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/btnPerfil"
             android:layout_width="45dp"
             android:layout_height="28dp"
+            android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/perfil"
-            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -986,14 +996,14 @@
             android:id="@+id/btnPerfilProfesional"
             android:layout_width="45dp"
             android:layout_height="28dp"
+            android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/lupa"
-            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -33,7 +33,8 @@ public class AppointmentsTalkerActivity extends AppCompatActivity implements Cal
         super.onCreate(savedInstanceState);
         binding = ActivityAppointmentsTalkerBinding.inflate(getLayoutInflater());
 
-        setContentView(R.layout.activity_appointments_talker);
+//        setContentView(R.layout.activity_appointments_talker);
+        setContentView(binding.getRoot());
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
