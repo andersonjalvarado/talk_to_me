@@ -133,23 +133,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
                 android:background="@color/white"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-                android:padding="10dp">
+                app:layout_constraintTop_toBottomOf="@+id/containerSuperior">
 
                 <ImageButton
                     android:id="@+id/btn_certificados"
                     android:layout_width="170dp"
                     android:layout_height="155dp"
                     android:background="@color/pink_bckgr_btn"
-                    android:scaleType="fitCenter"
                     android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/certificados"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/certificados" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/texto_certificados"
@@ -171,15 +170,15 @@
                     android:id="@+id/btn_request"
                     android:layout_width="170dp"
                     android:layout_height="155dp"
+                    android:layout_marginStart="17dp"
                     android:adjustViewBounds="true"
                     android:background="@color/pink_bckgr_btn"
                     android:padding="20dp"
                     android:scaleType="fitCenter"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/solicitud"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/btn_certificados"
-                    android:layout_marginStart="17dp"
-                    android:src="@drawable/solicitud" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/texto_request"
@@ -193,21 +192,22 @@
                     android:textStyle="bold"
                     android:transitionName="textTrans"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_request" />
+                    app:layout_constraintStart_toEndOf="@+id/texto_certificados"
+                    app:layout_constraintTop_toBottomOf="@id/btn_request" />
 
                 <ImageButton
                     android:id="@+id/btn_cita"
                     android:layout_width="170dp"
                     android:layout_height="155dp"
+                    android:layout_marginTop="10dp"
                     android:adjustViewBounds="true"
                     android:background="@color/pink_bckgr_btn"
                     android:padding="20dp"
-                    android:layout_marginTop="10dp"
                     android:scaleType="fitCenter"
+                    android:src="@drawable/citas"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/texto_certificados"
-                    tools:ignore="MissingConstraints"
-                    android:src="@drawable/citas" />
+                    tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/texto_cita"
@@ -227,11 +227,11 @@
                     android:id="@+id/btn_patients"
                     android:layout_width="170dp"
                     android:layout_height="155dp"
+                    android:layout_marginStart="17dp"
                     android:layout_marginTop="10dp"
                     android:adjustViewBounds="true"
                     android:background="@color/pink_bckgr_btn"
                     android:padding="20dp"
-                    android:layout_marginStart="17dp"
 
                     android:scaleType="fitCenter"
                     android:src="@drawable/pacientes"
@@ -252,6 +252,7 @@
                     android:textStyle="bold"
                     android:transitionName="textTrans"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/texto_cita"
                     app:layout_constraintTop_toBottomOf="@+id/btn_patients" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
