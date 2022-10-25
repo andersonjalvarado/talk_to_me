@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Talk To Me</string>
-    <string name="ensato1">Rotacion 1</string>
-    <string name="ensato2">Rotacion 2</string>
+    <string name="rDerecha">Rotacion Derecha</string>
+    <string name="rIzquierda">Rotacion Izquierda</string>
+    <string name="notsensor">No cuenta con acelerometro</string>
     <string name="enssayo3">No se que putas haga</string>
     <string name="Bienvenido">Bienvenid@ a</string>
     <string name="Rol">Escoge tu rol en</string>
@@ -31,7 +32,7 @@
     <string name="CE">Cédula de Extranjería</string>
     <string name="RC">Registro Civil</string>
     <string name="Ubicacion">Dirección</string>
-    <string name="Parte">Ahora eres parte de</string>
+    <string name="Parte">Bienvenido a</string>
     <string name="txtProfesional">Aquí puedes ver los detalles sobre el Profesional</string>
     <string name="Descripcion">Descripción</string>
     <string name="Especialidad">Especialidad</string>
