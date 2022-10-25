@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeTalkerActivity extends AppCompatActivity {
 
@@ -53,6 +54,9 @@ public class HomeTalkerActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),PerfilTalkerActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.logoutButton:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 return false;
             }
