@@ -28,8 +28,6 @@ public class NotificacionesProfesionalActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.page_Notification:
-                        startActivity(new Intent(getApplicationContext(),NotificacionesProfesionalActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.page_Home:
                         startActivity(new Intent(getApplicationContext(),HomeProfesionalActivity.class));

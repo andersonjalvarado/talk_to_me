@@ -2,9 +2,15 @@ package edu.puj.talktome.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
+import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivityHistoryBinding;
 
 public class HistoryActivity extends AppCompatActivity {
@@ -16,11 +22,30 @@ public class HistoryActivity extends AppCompatActivity {
         binding = ActivityHistoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnPerfilProfesional.setOnClickListener(view -> startActivity(new Intent(this, AvailableProfessionalsActivity.class)));
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        binding.btnPerfil.setOnClickListener(view -> startActivity(new Intent(this, PerfilTalkerActivity.class)));
-
-        binding.btnNotification.setOnClickListener( view -> startActivity(new Intent( this, NotificacionesTalkerActivity.class)));
-
+                switch(item.getItemId())
+                {
+                    case R.id.page_Notification:
+                        startActivity(new Intent(getApplicationContext(),NotificacionesTalkerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Home:
+                        startActivity(new Intent(getApplicationContext(),HomeTalkerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Profile:
+                        startActivity(new Intent(getApplicationContext(),PerfilTalkerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logoutButton:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
+                return false;
+            }
+        });
     }
 }

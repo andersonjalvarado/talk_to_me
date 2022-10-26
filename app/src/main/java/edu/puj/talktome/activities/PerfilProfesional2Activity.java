@@ -17,5 +17,6 @@ public class PerfilProfesional2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPerfilProfesional2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
     }
 }

@@ -1,5 +1,6 @@
 package edu.puj.talktome.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,15 +10,19 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 
+import edu.puj.talktome.R;
 import edu.puj.talktome.adapters.ImageAdapter;
 import edu.puj.talktome.databinding.ActivityCertificatesBinding;
 
@@ -71,6 +76,32 @@ public class CertificatesActivity extends AppCompatActivity {
             }
         });
         binding.BotonAddCertificates.setOnClickListener(view -> startGallery(binding.getRoot()));
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.page_Notification:
+                        startActivity(new Intent(getApplicationContext(),NotificacionesProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Home:
+                        startActivity(new Intent(getApplicationContext(),HomeProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Profile:
+                        startActivity(new Intent(getApplicationContext(),PerfilProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logoutButton:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
+                return false;
+            }
+        });
     }
     public void startGallery(View view){
         Intent pickGalleryImage = new Intent(Intent.ACTION_PICK);

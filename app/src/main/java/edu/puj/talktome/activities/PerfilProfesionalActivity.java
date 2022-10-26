@@ -16,7 +16,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,6 +56,32 @@ public class PerfilProfesionalActivity extends AppCompatActivity {
             startCamera(binding.getRoot());
         });
         binding.galleryButton.setOnClickListener(view -> startGallery(binding.getRoot()));
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.page_Notification:
+                        startActivity(new Intent(getApplicationContext(),NotificacionesProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Home:
+                        startActivity(new Intent(getApplicationContext(),HomeProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.page_Profile:
+                        startActivity(new Intent(getApplicationContext(),PerfilProfesionalActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logoutButton:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
+                return false;
+            }
+        });
 //        Log.i(TAG, "onCreate: Voy a solicitar el permiso al iniciar");
 //        requestPermission(this, cameraPerm, "Permiso para utilizar la camara", CAMERA_PERMISSION_ID);
 //        initView();

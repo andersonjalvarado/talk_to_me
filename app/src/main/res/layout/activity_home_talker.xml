@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HomeTalkerActivity"
-    android:background="@color/blue_bckgr2">
+    android:background="@color/blue_bckgr2"
+    android:padding="15dp">
 
     <ScrollView
         android:id="@+id/containerGeneral"
@@ -68,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/blue_bckgr3"
+                android:background="@drawable/border_title"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
