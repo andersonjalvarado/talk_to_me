@@ -13,7 +13,7 @@
         android:id="@+id/containerSuperior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue_bckgr3"
+        android:background="@drawable/border_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,12 +82,12 @@
         android:layout_below="@id/containerSuperior"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="50dp"
-        android:background="@color/blue_bckgr2"
+        android:background="@drawable/border"
         android:contentDescription="@string/scroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-        app:layout_constraintBottom_toTopOf="@id/containerMenu">
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -554,57 +554,18 @@
 
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/containerMenu"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
-
-        android:padding="5dp"
+        app:labelVisibilityMode="labeled"
+        android:background="@drawable/border_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/btnPerfil"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/perfil"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnNotification"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/notificacion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-            app:layout_constraintStart_toEndOf="@+id/btnPerfilProfesional"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnPerfilProfesional"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/lupa"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        app:layout_constraintStart_toEndOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

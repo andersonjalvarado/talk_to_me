@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.HomeProfesionalActivity"
-    android:background="@color/blue_bckgr2"
-    android:padding="15dp"
-    android:orientation="vertical">
+    android:background="@color/blue_bckgr2">
 
     <ScrollView
         android:id="@+id/containerGeneral"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:background="@color/blue_bckgr2"
         android:contentDescription="@string/scroll"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/pincipalLogoBlue"
                 android:layout_width="78dp"
                 android:layout_height="68dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/logo1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +42,6 @@
                 android:src="@drawable/t1line2"
                 app:layout_constraintBottom_toTopOf="@+id/hola_usuario"
                 app:layout_constraintEnd_toEndOf="parent"
-
                 app:layout_constraintStart_toEndOf="@+id/pincipalLogoBlue"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +49,9 @@
                 android:id="@+id/hola_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:text="Hola Angie"
                 android:textAlignment="textStart"
                 android:textColor="@color/name"
@@ -65,12 +66,12 @@
                 android:id="@+id/containerSuperior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue_bckgr3"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/border_title"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="1dp"
-                app:layout_constraintTop_toBottomOf="@+id/hola_usuario"
-                android:padding="10dp">
+                app:layout_constraintTop_toBottomOf="@+id/hola_usuario">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/conteinerInformation"
@@ -80,7 +81,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/pincipalLogo"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" >
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/principalTitle"
@@ -133,8 +134,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:padding="10dp"
+                android:background="@null"
+                android:padding="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/containerSuperior">
@@ -143,7 +144,7 @@
                     android:id="@+id/btn_certificados"
                     android:layout_width="170dp"
                     android:layout_height="155dp"
-                    android:background="@color/pink_bckgr_btn"
+                    android:background="@drawable/border_icon"
                     android:padding="20dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/certificados"
@@ -172,7 +173,7 @@
                     android:layout_height="155dp"
                     android:layout_marginStart="17dp"
                     android:adjustViewBounds="true"
-                    android:background="@color/pink_bckgr_btn"
+                    android:background="@drawable/border_icon"
                     android:padding="20dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/solicitud"
@@ -201,7 +202,7 @@
                     android:layout_height="155dp"
                     android:layout_marginTop="10dp"
                     android:adjustViewBounds="true"
-                    android:background="@color/pink_bckgr_btn"
+                    android:background="@drawable/border_icon"
                     android:padding="20dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/citas"
@@ -230,9 +231,8 @@
                     android:layout_marginStart="17dp"
                     android:layout_marginTop="10dp"
                     android:adjustViewBounds="true"
-                    android:background="@color/pink_bckgr_btn"
+                    android:background="@drawable/border_icon"
                     android:padding="20dp"
-
                     android:scaleType="fitCenter"
                     android:src="@drawable/pacientes"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -257,57 +257,22 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/containerMenu"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:padding="5dp"
-        tools:layout_editor_absoluteY="603dp">
-
-        <ImageButton
-            android:id="@+id/btnListaPacientes"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/lupa"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageButton
-            android:id="@+id/btnNotification"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/notificacion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
-            app:layout_constraintStart_toEndOf="@+id/btnListaPacientes"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnPerfil"
-            android:layout_width="45dp"
-            android:layout_height="28dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/perfil"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:labelVisibilityMode="labeled"
+        android:background="@drawable/border_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

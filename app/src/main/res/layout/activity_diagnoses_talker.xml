@@ -14,7 +14,7 @@
         android:id="@+id/containerSuperior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue_bckgr3"
+        android:background="@drawable/border_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -85,33 +85,33 @@
         android:layout_marginBottom="60dp"
         android:background="@color/blue_bckgr2"
         android:contentDescription="@string/scroll"
+        app:layout_constraintBottom_toTopOf="@id/containerMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerSuperior"
-        app:layout_constraintBottom_toTopOf="@id/containerMenu">
+        app:layout_constraintTop_toBottomOf="@+id/containerSuperior">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/border"
             android:padding="10dp"
-            app:circularflow_defaultRadius="10dp">
+            app:circularflow_defaultRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:id="@+id/diagnostico_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@+id/diagnostico_2"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintCircleRadius="34234dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                android:onClick="onClick"
-                app:layout_constraintCircleRadius="34234dp">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,8 +141,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -173,8 +173,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -205,8 +205,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -216,21 +216,20 @@
                 android:id="@+id/diagnostico_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/diagnostico_1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onClick"
-                android:focusable="true">
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diagnostico_1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -255,8 +254,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -287,8 +286,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -319,8 +318,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -330,20 +329,19 @@
                 android:id="@+id/diagnostico_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/diagnostico_2"
-                android:orientation="vertical"
-                app:layout_constraintStart_toEndOf="parent"
                 android:layout_marginTop="20dp"
+                android:focusable="true"
                 android:onClick="onClick"
-                android:focusable="true">
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diagnostico_2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -368,8 +366,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -400,8 +398,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -432,8 +430,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -443,20 +441,19 @@
                 android:id="@+id/diagnostico_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/diagnostico_3"
-                android:orientation="vertical"
-                app:layout_constraintStart_toEndOf="parent"
                 android:layout_marginTop="20dp"
+                android:focusable="true"
                 android:onClick="onClick"
-                android:focusable="true">
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diagnostico_3">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -481,8 +478,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -513,8 +510,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -545,8 +542,8 @@
                         android:textStyle="bold"
                         android:transitionName="textTrans"
 
-                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/realizado_por"
                         app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
 
@@ -555,8 +552,7 @@
             <!--</ScrollView>-->
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout
-            >
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 

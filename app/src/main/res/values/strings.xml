@@ -111,7 +111,7 @@
     <string name="name_label">Name</string>
     <string name="create_a_new_profile">Create a new Profile</string>
     <string name="phone_label">Phone</string>
-    <string name="logout_menu_item">Lougout</string>
+    <string name="logout_menu_item">Salir</string>
     <string name="message_chat_hint">Message</string>
 
     <!--Mapas-->

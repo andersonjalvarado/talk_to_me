@@ -2,7 +2,7 @@
     <item
         android:id="@+id/page_Home"
         android:enabled="true"
-        android:icon="@drawable/lupa"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="Inicio"/>
     <item
         android:id="@+id/page_Notification"
@@ -12,7 +12,7 @@
     <item
         android:id="@+id/page_Profile"
         android:enabled="true"
-        android:icon="@drawable/perfil"
+        android:icon="@drawable/ic_user"
         android:title="Perfil"/>
     <item
         android:id="@+id/logoutButton"
