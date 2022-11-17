@@ -7,6 +7,7 @@
 ## Líder
 ### [Anderson Alvarado](https://github.com/andersonjalvarado) 
 ## Equipo de Desarollo
-### [Angie Castro](https://github.com/angCF) 
-### [Sebastian Martinez](https://github.com/Sebasgmv) 
+### [Angie Castro](https://github.com/angCF)
 ### [Mauren Rivera](https://github.com/murvn77)
+## Atención al cliente
+### [Sebastian Martinez](https://github.com/Sebasgmv) 
