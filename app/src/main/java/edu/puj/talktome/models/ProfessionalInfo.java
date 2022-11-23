@@ -11,13 +11,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ProfessionalInfo {
     private String name;
-    //private long fechaNacimiento;
     private String tipoDocumento;
     private long numeroDocumento;
-    private String direccion;
     private long phoneNumber;
     private String email;
     private String role;
+    private double latitud;
+    private double longitud;
 
     //private long createdAt;
     //private long lastLogin;

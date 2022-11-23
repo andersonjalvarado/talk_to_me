@@ -108,11 +108,16 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                                 Objects.requireNonNull(binding.nombreTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.nombreTextField.getEditText().getText().toString(),
                                 Objects.requireNonNull(binding.tipoIdTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.tipoIdTextField.getEditText().getText().toString(),
                                 Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.idTextField.getEditText().getText().toString()),
-                                Objects.requireNonNull(binding.ubTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.ubTextField.getEditText().getText().toString(),
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
-                                binding.correoTextField.getEditText().getText().toString(),
-                                rol);
-                        reference.setValue(tmpUser).addOnSuccessListener(unused ->
+                                Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.correoTextField.getEditText().getText().toString(),
+
+                                binding.correoTextField.getEditText().getText().toString(), rol,
+
+                                Double.parseDouble(Objects.requireNonNull(binding.latitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.latitud.getEditText().getText().toString()),
+                                Double.parseDouble(Objects.requireNonNull(binding.longitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.longitud.getEditText().getText().toString()));
+
+
+                                reference.setValue(tmpUser).addOnSuccessListener(unused ->
                                 {
                                     Intent intent = new Intent(SProfesionalActivity.this, HomeProfesionalActivity.class);
 

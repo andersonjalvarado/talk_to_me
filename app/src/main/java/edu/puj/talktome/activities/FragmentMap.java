@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.maps.android.PolyUtil;
 
 
@@ -47,6 +54,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -54,6 +62,9 @@ import javax.inject.Inject;
 import edu.puj.talktome.App;
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivityFragmentMapBinding;
+import edu.puj.talktome.models.DatabaseRoutes;
+import edu.puj.talktome.models.ProfessionalInfo;
+import edu.puj.talktome.models.UserInfo;
 import edu.puj.talktome.services.GeoInfoFromJsonService;
 import edu.puj.talktome.services.GeocoderService;
 import edu.puj.talktome.utils.AlertUtils;
@@ -78,14 +89,23 @@ public class FragmentMap extends Fragment {
     Polyline userRoute;
 
     //Light sensor variables
-    final static float LIGHT_LIMIT = 2000.0f;
+    final static float LIGHT_LIMIT = 5000.0f;
     final static int ACELEROMETROX = 1;
     int whip = 0;
-
+    FirebaseDatabase mDatabase;
+    String rol;
     SensorManager sensorManager;
     Sensor lightSensor, acelerometroSensor;
     SensorEventListener lightSensorEventListener, acelerometroSensorEventListener;
     GoogleMap.OnMapLongClickListener longClickListener;
+    public static final String TAG = RegistroActivity.class.getName();
+
+    private FirebaseAuth mAuth;
+    private DatabaseReference reference;
+    ValueEventListener listener;
+    private List<Pair> ubicaciones = new ArrayList<>();
+
+
 
     private final OnMapReadyCallback callback = new OnMapReadyCallback() {
         @Override
@@ -102,7 +122,7 @@ public class FragmentMap extends Fragment {
             //Setup the user marker with a default position
             userPosition = googleMap.addMarker(new MarkerOptions()
                     .position(UNIVERSIDAD_JAVERIANA)
-                    .icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_circle_24))
+                    .icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24))
                     .anchor(0.5f, 0.5f)
                     .zIndex(1.0f));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(UNIVERSIDAD_JAVERIANA));
@@ -248,20 +268,37 @@ public class FragmentMap extends Fragment {
     }
 
     private void loadGeoInfo() {
+        //String uuid = getIntent().getStringExtra("uuid");
+        mDatabase = FirebaseDatabase.getInstance();
+
+        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.USERS_PATH);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                snapshot.getChildren().forEach(dataSnapshot -> {
+                    ProfessionalInfo tmpUser = dataSnapshot.getValue(ProfessionalInfo.class);
+                    String uuid = dataSnapshot.getRef().getKey();
+                    Log.e(TAG,"Uiid"+uuid);
+                    //if(!uuids.contains(uuid)){
+                        ubicaciones.add(new Pair(tmpUser.getLatitud(),tmpUser.getLongitud()));
+                      //  uuids.add(uuid);
+                  //  }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "onCancelled: ", error.toException());
+            }
+        });
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            geoInfoFromJsonService.getGeoInfoList().forEach(geoInfo -> {
+            for (int i=0; i<ubicaciones.size(); i++) {
                 MarkerOptions newMarker = new MarkerOptions();
-                newMarker.position(new LatLng(geoInfo.getLat(), geoInfo.getLng()));
-                newMarker.title(geoInfo.getTitle());
-                newMarker.snippet(geoInfo.getContent());
-                if (geoInfo.getImageBase64() != null) {
-                    byte[] pinImage = Base64.decode(geoInfo.getImageBase64(), Base64.DEFAULT);
-                    Bitmap decodedPin = BitmapFactory.decodeByteArray(pinImage, 0, pinImage.length);
-                    Bitmap smallPin = Bitmap.createScaledBitmap(decodedPin, 200, 200, false);
-                    newMarker.icon(BitmapDescriptorFactory.fromBitmap(smallPin));
-                }
+                newMarker.position(new LatLng(Double.valueOf(ubicaciones.get(i).first.toString()) , Double.valueOf(ubicaciones.get(i).second.toString())));
+                newMarker.icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24));
                 googleMap.addMarker(newMarker);
-            });
+            }
         }
     }
 
