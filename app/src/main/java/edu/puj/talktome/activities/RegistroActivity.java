@@ -42,6 +42,7 @@ public class RegistroActivity extends AppCompatActivity {
         //Cambiar nombre
 
         String uuid = getIntent().getStringExtra("uuid");
+        String nombreU = getIntent().getStringExtra("nombreU");
         mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(uuid));
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -70,11 +71,16 @@ public class RegistroActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (rol.equals("talker"))
-                    startActivity(new Intent(RegistroActivity.this,HomeTalkerActivity.class));
-                else if(rol.equals("profesional"))
-                    startActivity(new Intent(RegistroActivity.this,HomeProfesionalActivity.class));
-
+                if (rol.equals("talker")){
+                    Intent intentT = new Intent(RegistroActivity.this, HomeTalkerActivity.class);
+                    intentT.putExtra("nombreU",nombreU);
+                    startActivity(intentT);
+                }
+                else if(rol.equals("profesional")){
+                    Intent intentT = new Intent(RegistroActivity.this, HomeProfesionalActivity.class);
+                    intentT.putExtra("nombreU",nombreU);
+                    startActivity(intentT);
+                }
                 finish();
             }
         },4000);

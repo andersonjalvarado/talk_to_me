@@ -220,6 +220,7 @@
         android:layout_marginBottom="235dp"
         android:background="@color/white"
         android:paddingTop="0dp" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"

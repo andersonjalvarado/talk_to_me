@@ -21,7 +21,8 @@ public class HomeProfesionalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeProfesionalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        String nombreU = getIntent().getStringExtra("nombreU");
+        binding.holaUsuario.setText("Hola "+nombreU);
         binding.btnCertificados.setOnClickListener(view -> startActivity(new Intent(this, CertificatesActivity.class)));
 
         binding.btnRequest.setOnClickListener(view -> startActivity(new Intent(this, SolicitudesActivity.class)));

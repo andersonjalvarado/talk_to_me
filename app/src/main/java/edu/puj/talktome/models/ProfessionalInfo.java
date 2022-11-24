@@ -18,7 +18,6 @@ public class ProfessionalInfo {
     private String role;
     private double latitud;
     private double longitud;
-
     //private long createdAt;
     //private long lastLogin;
 }

@@ -2,6 +2,7 @@ package edu.puj.talktome.activities;
 
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivityStalkerBinding;
+import edu.puj.talktome.dialog.DatePickerFragment;
 import edu.puj.talktome.models.DatabaseRoutes;
 import edu.puj.talktome.models.UserInfo;
 import edu.puj.talktome.utils.AlertUtils;
@@ -40,7 +41,7 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
         setContentView(binding.getRoot());
 
         //Calendario
-        binding.creaTextView.setOnClickListener(this);
+        binding.textNacimiento.setOnClickListener(this);
 
         //Spinner android
         llenarSpinner();
@@ -51,7 +52,12 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
     }
     @Override
     public void onClick(View view) {
-        final Calendar calendar = Calendar.getInstance();
+        switch (view.getId()) {
+            case R.id.textNacimiento:
+                showDatePickerDialog();
+                break;
+        }
+        /*final Calendar calendar = Calendar.getInstance();
         dia = calendar.get(Calendar.DAY_OF_MONTH);
         mes = calendar.get(Calendar.MONTH);
         ano = calendar.get(Calendar.YEAR);
@@ -62,7 +68,19 @@ public class STalkerActivity extends BasicActivity implements View.OnClickListen
                 binding.textNacimiento.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
             }
         },dia,mes,ano);
-        datePickerDialog.show();
+        datePickerDialog.show();*/
+    }
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because January is zero
+                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                binding.textNacimiento.setText(selectedDate);
+            }
+        });
+
+        newFragment.show(STalkerActivity.this.getSupportFragmentManager(), "datePicker");
     }
 
     private void doSignup() {

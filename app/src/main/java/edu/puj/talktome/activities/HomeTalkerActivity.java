@@ -27,7 +27,8 @@ public class HomeTalkerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeTalkerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        String nombreU = getIntent().getStringExtra("nombreU");
+        binding.holaUsuario.setText("Hola "+nombreU);
         binding.btnUbicacion.setOnClickListener(view -> startActivity(new Intent(this, LocationsTalkerActivity.class)));
 
         binding.btnCita.setOnClickListener(view -> startActivity(new Intent(this, AppointmentsTalkerActivity.class)));

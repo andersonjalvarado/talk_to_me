@@ -2,6 +2,7 @@ package edu.puj.talktome.activities;
 
 import edu.puj.talktome.R;
 import edu.puj.talktome.databinding.ActivitySprofesionalBinding;
+import edu.puj.talktome.dialog.DatePickerFragment;
 import edu.puj.talktome.models.DatabaseRoutes;
 import edu.puj.talktome.models.ProfessionalInfo;
 import edu.puj.talktome.utils.AlertUtils;
@@ -39,7 +40,7 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
         setContentView(binding.getRoot());
 
         //Calendario
-        binding.creaTextView.setOnClickListener(this);
+        binding.textNacimiento.setOnClickListener(this);
 
         //Spinner android
         llenarSpinner();
@@ -52,7 +53,12 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
     }
     @Override
     public void onClick(View view) {
-        final Calendar calendar = Calendar.getInstance();
+        switch (view.getId()) {
+            case R.id.textNacimiento:
+                showDatePickerDialog();
+                break;
+        }
+        /*final Calendar calendar = Calendar.getInstance();
         dia = calendar.get(Calendar.DAY_OF_MONTH);
         mes = calendar.get(Calendar.MONTH);
         ano = calendar.get(Calendar.YEAR);
@@ -63,7 +69,19 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                 binding.textNacimiento.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
             }
         },dia,mes,ano);
-        datePickerDialog.show();
+        datePickerDialog.show();*/
+    }
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because January is zero
+                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                binding.textNacimiento.setText(selectedDate);
+            }
+        });
+
+        newFragment.show(SProfesionalActivity.this.getSupportFragmentManager(), "datePicker");
     }
 
     private void doSignup() {
@@ -71,7 +89,6 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
         String pass = Objects.requireNonNull(binding.contrasenaTextField.getEditText()).getText().toString();
         String pass2 = Objects.requireNonNull(binding.confirmaTextField.getEditText()).getText().toString();
         String rol = "profesional";
-
 
         if (email.isEmpty()) {
             alertUtils.shortSimpleSnackbar(binding.getRoot(), getString(R.string.mail_error_label));
@@ -100,7 +117,6 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
 
         if (pass.equals(pass2)) {
 
-
             mAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnSuccessListener(authResult -> {
                         DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.getUser(authResult.getUser().getUid()));
@@ -110,17 +126,13 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                                 Long.parseLong(Objects.requireNonNull(binding.idTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.idTextField.getEditText().getText().toString()),
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
                                 Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.correoTextField.getEditText().getText().toString(),
-
-                                binding.correoTextField.getEditText().getText().toString(), rol,
-
+                                rol,
                                 Double.parseDouble(Objects.requireNonNull(binding.latitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.latitud.getEditText().getText().toString()),
                                 Double.parseDouble(Objects.requireNonNull(binding.longitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.longitud.getEditText().getText().toString()));
-
 
                                 reference.setValue(tmpUser).addOnSuccessListener(unused ->
                                 {
                                     Intent intent = new Intent(SProfesionalActivity.this, HomeProfesionalActivity.class);
-
                                     startActivity(intent);
                                 })
                                 .addOnFailureListener(e ->
@@ -144,6 +156,4 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
         AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.tipoId_exposed);
         autoCompleteTextView.setAdapter(adapter);
     }
-
-
 }

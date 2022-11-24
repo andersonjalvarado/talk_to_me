@@ -41,11 +41,13 @@ public class LoginActivity extends BasicActivity {
     ValueEventListener listener;
 
     private List<String> names = new ArrayList<>();
+    private List<String> correo = new ArrayList<>();
     private List<String> uuids = new ArrayList<>();
     ArrayAdapter adapter;
 
     String uid;
     private String rol;
+    String nombreU;
     String auxUuid;
 
     @Override
@@ -67,7 +69,8 @@ public class LoginActivity extends BasicActivity {
                     String uuid = dataSnapshot.getRef().getKey();
                     Log.e(TAG,"Uiid"+uuid);
                     if(!uuids.contains(uuid)){
-                        names.add(tmpUser.getEmail());
+                        correo.add(tmpUser.getEmail());
+                        names.add(tmpUser.getName());
                         uuids.add(uuid);
                     }
                         });
@@ -116,10 +119,12 @@ public class LoginActivity extends BasicActivity {
                     //startActivity(new Intent(LoginActivity.this, HomeTalkerActivity.class));
                     //if(rol.equals("profesional"))
                         //startActivity(new Intent(LoginActivity.this, RegistroActivity.class));
-                    if(names.contains(binding.correoTextField.getEditText().getText().toString())){
+                    if(correo.contains(binding.correoTextField.getEditText().getText().toString())){
                         Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
-                        auxUuid = String.valueOf(uuids.get(names.indexOf(binding.correoTextField.getEditText().getText().toString())));
+                        auxUuid = String.valueOf(uuids.get(correo.indexOf(binding.correoTextField.getEditText().getText().toString())));
+                        nombreU = String.valueOf(names.get(correo.indexOf(binding.correoTextField.getEditText().getText().toString())));
                         //auxUuid="uoQgS7aynGtbccoUNwh78iuqeUd73";
+                        intent.putExtra("nombreU",nombreU);
                         intent.putExtra("uuid",auxUuid);
                         startActivity(intent);
                     }
