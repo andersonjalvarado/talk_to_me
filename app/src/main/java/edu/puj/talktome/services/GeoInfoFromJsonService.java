@@ -18,7 +18,7 @@ import lombok.Getter;
 @Getter
 public class GeoInfoFromJsonService {
     public static final String TAG = GeoInfoFromJsonService.class.getName();
-    public static final String COUNTRIES_FILE = "nyc_info.json";
+    public static final String COUNTRIES_FILE = "profesional_info.json";
     private final Context context;
     private ArrayList<GeoInfo> geoInfoList = new ArrayList<>();
 

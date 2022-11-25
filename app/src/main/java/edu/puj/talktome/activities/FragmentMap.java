@@ -5,43 +5,36 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Address;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
+import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.android.volley.Request;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -92,18 +85,16 @@ public class FragmentMap extends Fragment {
     final static float LIGHT_LIMIT = 5000.0f;
     final static int ACELEROMETROX = 1;
     int whip = 0;
-    FirebaseDatabase mDatabase;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference reference;
+    ValueEventListener listener;
     String rol;
     SensorManager sensorManager;
     Sensor lightSensor, acelerometroSensor;
     SensorEventListener lightSensorEventListener, acelerometroSensorEventListener;
     GoogleMap.OnMapLongClickListener longClickListener;
     public static final String TAG = RegistroActivity.class.getName();
-
-    private FirebaseAuth mAuth;
-    private DatabaseReference reference;
-    ValueEventListener listener;
-    private List<Pair> ubicaciones = new ArrayList<>();
+   // private List<LatLng> ubicaciones = new ArrayList<>();
 
 
 
@@ -128,13 +119,6 @@ public class FragmentMap extends Fragment {
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(UNIVERSIDAD_JAVERIANA));
 
 
-
-            googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-                @Override
-                public void onMapLongClick(@NonNull LatLng latLng) {
-                    findPlaceByLocation(latLng);
-                }
-            });
             //Setup the route line
             userRoute = googleMap.addPolyline(new PolylineOptions()
                     .color(R.color.light_blue_400)
@@ -143,6 +127,27 @@ public class FragmentMap extends Fragment {
                     .zIndex(0.5f));
             //Setup the rest of the markers based in a json file
             loadGeoInfo();
+            googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+                @Override
+                public void onMapLongClick(@NonNull LatLng latLng) {
+                    PolylineOptions polylineOptions = new PolylineOptions()
+                            .width(15.0f)
+                            .color(R.color.light_blue_400)
+                            .geodesic(true)
+                            .zIndex(0.5f)
+                            .add(new LatLng(userPosition.getPosition().latitude,userPosition.getPosition().longitude))
+                            .add(new LatLng(latLng.latitude, latLng.longitude));
+                    userRoute = googleMap.addPolyline(polylineOptions);
+                    double dist = distance(userPosition.getPosition().latitude, userPosition.getPosition().longitude, latLng.latitude, latLng.longitude);
+                    Toast.makeText(getContext(), "Distancia: " + dist + " km", Toast.LENGTH_LONG).show();
+                }
+            });
+            binding.materialButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (userRoute !=null) userRoute.remove();
+                }
+            });
         }
     };
 
@@ -152,7 +157,7 @@ public class FragmentMap extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         ((App) requireActivity().getApplicationContext()).getAppComponent().inject(this);
-        binding = ActivityFragmentMapBinding.inflate(inflater); //---------------
+        binding = ActivityFragmentMapBinding.inflate(inflater); //--------------
         return binding.getRoot();
     }
 
@@ -230,15 +235,6 @@ public class FragmentMap extends Fragment {
 
         sensorManager.registerListener(acelerometroSensorEventListener,acelerometroSensor,SensorManager.SENSOR_DELAY_NORMAL);
 
-        binding.materialButton.setOnClickListener(view1 -> findPlaces(binding.textInputLayout.getEditText().getText().toString()));
-        binding.textInputLayout.getEditText().setImeOptions(EditorInfo.IME_ACTION_SEARCH);
-        binding.textInputLayout.getEditText().setOnEditorActionListener((textView, i, keyEvent) -> {
-            if (i == EditorInfo.IME_ACTION_SEARCH) {
-                findPlaces(binding.textInputLayout.getEditText().getText().toString());
-                return true;
-            }
-            return false;
-        });
     }
 
     @Override
@@ -268,118 +264,28 @@ public class FragmentMap extends Fragment {
     }
 
     private void loadGeoInfo() {
-        //String uuid = getIntent().getStringExtra("uuid");
-        mDatabase = FirebaseDatabase.getInstance();
-
-        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.USERS_PATH);
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                snapshot.getChildren().forEach(dataSnapshot -> {
-                    ProfessionalInfo tmpUser = dataSnapshot.getValue(ProfessionalInfo.class);
-                    String uuid = dataSnapshot.getRef().getKey();
-                    Log.e(TAG,"Uiid"+uuid);
-                    //if(!uuids.contains(uuid)){
-                        ubicaciones.add(new Pair(tmpUser.getLatitud(),tmpUser.getLongitud()));
-                      //  uuids.add(uuid);
-                  //  }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "onCancelled: ", error.toException());
-            }
-        });
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            for (int i=0; i<ubicaciones.size(); i++) {
+            geoInfoFromJsonService.getGeoInfoList().forEach(geoInfo -> {
                 MarkerOptions newMarker = new MarkerOptions();
-                newMarker.position(new LatLng(Double.valueOf(ubicaciones.get(i).first.toString()) , Double.valueOf(ubicaciones.get(i).second.toString())));
-                newMarker.icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24));
+                newMarker.position(new LatLng(geoInfo.getLat(), geoInfo.getLng()));
+                newMarker.title(geoInfo.getTitle());
+                newMarker.snippet(geoInfo.getContent());
+                newMarker.icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_medical_services_24));
+
                 googleMap.addMarker(newMarker);
-            }
+            });
         }
     }
+    private double distance(double myLat, double myLong, double otherLat, double otherLong){
+        double latDistance = Math.toRadians(myLat - otherLat);
+        double longDistance = Math.toRadians(myLong - otherLong);
 
-    public void findPlaces(String search) {
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                final LatLng[] newPosition = new LatLng[1];
-                //List<Address> results = geocoderService.finPlacesByNameInRadious(search, userPosition.getPosition());
-                List<Address> results = geocoderService.findPlacesByName(search);
-                Log.d("TAG", "findPlaces: results = " + results.size());
-                results.forEach(address -> googleMap.addMarker(new MarkerOptions()
-                        .icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.cerebro))
-                        .position(newPosition[0] = new LatLng(address.getLatitude(), address.getLongitude()))
-                        .title(address.getAddressLine(0))
-                        .snippet(address.getAddressLine(0) != null ? address.getAddressLine(0) : ""))
-                );
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(newPosition[0],16));
-                String url = "https://maps.googleapis.com/maps/api/directions/json?origin="+userPosition.getPosition().latitude +","+ userPosition.getPosition().longitude+"&destination="+ newPosition[0].latitude+","+newPosition[0].longitude+"&key=AIzaSyAoQL0aSH8DfaDg7GyiwGEaJi6EcARlGXI";
-                RequestQueue queue = Volley.newRequestQueue(getActivity());
-                StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
-                    try {
-                        JSONObject json = new JSONObject(response);
-                        trazarRuta(json);
-                        Log.i("Trazar ruta", response);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }, error -> {
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) + Math.cos(Math.toRadians(myLat)) *
+                Math.cos(Math.toRadians(otherLat)) * Math.sin(longDistance / 2) * Math.sin(longDistance / 2);
 
-                });
-                queue.add(request);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double res = 6371.01 * c;
 
-    private void trazarRuta(JSONObject json) {
-        JSONArray routes;
-        JSONArray legs;
-        JSONArray steps;
-        try{
-            routes = json.getJSONArray("routes");
-            for (int i = 0; i<routes.length();i++){
-                legs = ((JSONObject)(routes.get(i))).getJSONArray("legs");
-                for(int j = 0; j< legs.length(); j++){
-                    steps = ((JSONObject)legs.get(j)).getJSONArray("steps");
-                    for(int k = 0; k< steps.length(); k++){
-                        String polyline = ""+((JSONObject)((JSONObject)steps.get(k)).get("polyline")).get("points");
-                        Log.i("Final", polyline);
-                        List<LatLng> list = PolyUtil.decode(polyline);
-                        googleMap.addPolyline(new PolylineOptions().addAll(list).color(Color.MAGENTA).width(5));
-                    }
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void findPlaceByLocation(LatLng latLng){
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                List<Address> results = geocoderService.findPlacesByPosition(latLng);
-                Log.d("TAG", "findPlaces: results = " + results.size());
-                results.forEach(address -> googleMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(address.getLatitude(), address.getLongitude()))
-                        .title(address.getFeatureName())
-                        .snippet(address.getAddressLine(0) != null ? address.getAddressLine(0) : "")));
-                if (results.size() > 0) {
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLng( new LatLng(results.get(0).getLatitude(), results.get(0).getLongitude())));
-                    int dist = DistanceUtils.calculateDistanceInKilometer(userPosition.getPosition().latitude, userPosition.getPosition().longitude,
-                            results.get(0).getLatitude(), results.get(0).getLongitude());
-                    String mensaje;
-                    mensaje = String.format("La distancia que hay entre su posición\n" +
-                            "actual y el marcador creado es de: %skm", dist);
-                    AlertUtils.longToast(getContext(), mensaje);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        return Math.round(res * 100.0) / 100.0;
     }
 }

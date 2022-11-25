@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class GeoInfo {
     private String title;
     private String content;
-    private String imageBase64;
     private Double lat;
     private Double lng;
 }

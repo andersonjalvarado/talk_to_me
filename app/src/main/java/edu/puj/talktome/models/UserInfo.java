@@ -17,8 +17,6 @@ public class UserInfo {
     private long phoneNumber;
     private String email;
     private String role;
-    private double latitud;
-    private double longitud;
     //private String pass2;
     //private long createdAt;
     //private long lastLogin;

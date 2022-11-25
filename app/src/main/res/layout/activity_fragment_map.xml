@@ -37,33 +37,25 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
+        <TextView
             android:id="@+id/textInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/direction_field_label"
+            android:text=""
             app:layout_constraintEnd_toStartOf="@+id/materialButton"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/isCameraFixedToUser"
-            app:startIconDrawable="@drawable/ic_baseline_directions_24">
+            app:layout_constraintTop_toBottomOf="@+id/isCameraFixedToUser" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:imeOptions="actionSend"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/materialButton"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="@string/search_button_label"
-            app:icon="@drawable/ic_baseline_search_24"
+            android:text="Limpiar Ruta"
+            android:background="@color/blue_300"
+            app:icon="@drawable/ic_baseline_cleaning_services_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -80,5 +72,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonPanel" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
