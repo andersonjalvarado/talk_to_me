@@ -267,38 +267,56 @@ public class FragmentMap extends Fragment {
         }
     }
 
+//    private void loadGeoInfo() {
+//        //String uuid = getIntent().getStringExtra("uuid");
+//        mDatabase = FirebaseDatabase.getInstance();
+//
+//        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.USERS_PATH);
+//        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                snapshot.getChildren().forEach(dataSnapshot -> {
+//                    ProfessionalInfo tmpUser = dataSnapshot.getValue(ProfessionalInfo.class);
+//                    String uuid = dataSnapshot.getRef().getKey();
+//                    Log.e(TAG,"Uiid"+uuid);
+//                    //if(!uuids.contains(uuid)){
+//                        ubicaciones.add(new Pair(tmpUser.getLatitud(),tmpUser.getLongitud()));
+//                      //  uuids.add(uuid);
+//                  //  }
+//                });
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.e(TAG, "onCancelled: ", error.toException());
+//            }
+//        });
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            for (int i=0; i<ubicaciones.size(); i++) {
+//                MarkerOptions newMarker = new MarkerOptions();
+//                newMarker.position(new LatLng(Double.valueOf(ubicaciones.get(i).first.toString()) , Double.valueOf(ubicaciones.get(i).second.toString())));
+//                newMarker.icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24));
+//                googleMap.addMarker(newMarker);
+//            }
+//        }
+//    }
+
     private void loadGeoInfo() {
-        //String uuid = getIntent().getStringExtra("uuid");
-        mDatabase = FirebaseDatabase.getInstance();
-
-        DatabaseReference reference = mDatabase.getReference(DatabaseRoutes.USERS_PATH);
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                snapshot.getChildren().forEach(dataSnapshot -> {
-                    ProfessionalInfo tmpUser = dataSnapshot.getValue(ProfessionalInfo.class);
-                    String uuid = dataSnapshot.getRef().getKey();
-                    Log.e(TAG,"Uiid"+uuid);
-                    //if(!uuids.contains(uuid)){
-                        ubicaciones.add(new Pair(tmpUser.getLatitud(),tmpUser.getLongitud()));
-                      //  uuids.add(uuid);
-                  //  }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "onCancelled: ", error.toException());
-            }
-        });
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            for (int i=0; i<ubicaciones.size(); i++) {
+            geoInfoFromJsonService.getGeoInfoList().forEach(geoInfo -> {
                 MarkerOptions newMarker = new MarkerOptions();
-                newMarker.position(new LatLng(Double.valueOf(ubicaciones.get(i).first.toString()) , Double.valueOf(ubicaciones.get(i).second.toString())));
-                newMarker.icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24));
+                newMarker.position(new LatLng(geoInfo.getLat(), geoInfo.getLng()));
+                newMarker.title(geoInfo.getTitle());
+                newMarker.snippet(geoInfo.getContent());
+                if (geoInfo.getImageBase64() != null) {
+                    byte[] pinImage = Base64.decode(geoInfo.getImageBase64(), Base64.DEFAULT);
+                    Bitmap decodedPin = BitmapFactory.decodeByteArray(pinImage, 0, pinImage.length);
+                    Bitmap smallPin = Bitmap.createScaledBitmap(decodedPin, 200, 200, false);
+                    newMarker.icon(BitmapDescriptorFactory.fromBitmap(smallPin));
+                }
                 googleMap.addMarker(newMarker);
-            }
+            });
         }
     }
 
@@ -310,7 +328,7 @@ public class FragmentMap extends Fragment {
                 List<Address> results = geocoderService.findPlacesByName(search);
                 Log.d("TAG", "findPlaces: results = " + results.size());
                 results.forEach(address -> googleMap.addMarker(new MarkerOptions()
-                        .icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.cerebro))
+                        .icon(BitmapUtils.getBitmapDescriptor(getContext(), R.drawable.ic_baseline_person_pin_circle_24))
                         .position(newPosition[0] = new LatLng(address.getLatitude(), address.getLongitude()))
                         .title(address.getAddressLine(0))
                         .snippet(address.getAddressLine(0) != null ? address.getAddressLine(0) : ""))

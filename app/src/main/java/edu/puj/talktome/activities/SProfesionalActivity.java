@@ -111,7 +111,7 @@ public class SProfesionalActivity extends BasicActivity implements View.OnClickL
                                 Long.parseLong(Objects.requireNonNull(binding.celTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().phoneNumber().cellPhone().replace("-", "") : binding.celTextField.getEditText().getText().toString()),
                                 Objects.requireNonNull(binding.correoTextField.getEditText()).getText().toString().isEmpty() ? Faker.instance().funnyName().name() : binding.correoTextField.getEditText().getText().toString(),
 
-                                binding.correoTextField.getEditText().getText().toString(), rol,
+                                rol,
 
                                 Double.parseDouble(Objects.requireNonNull(binding.latitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.latitud.getEditText().getText().toString()),
                                 Double.parseDouble(Objects.requireNonNull(binding.longitud.getEditText()).getText().toString().isEmpty() ? Faker.instance().numerify("35.232") : binding.longitud.getEditText().getText().toString()));
